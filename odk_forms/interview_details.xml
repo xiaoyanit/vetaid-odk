@@ -1,0 +1,27 @@
+<h:html xmlns="http://www.w3.org/2002/xforms"
+        xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Interview details</h:title>
+
+	<model>
+		<instance>
+			<interview>
+				<interviewee/>
+			</interview>
+		</instance>
+	 
+		<bind nodeset="/interview/interviewee" type="string"/>
+
+      
+    </model>
+  </h:head>
+  <h:body>
+		<input ref="interviewee">
+			<label>Name of interviewer</label>
+			<hint>can be short or very long</hint>
+		</input>
+  </h:body>
+</h:html>

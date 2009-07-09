@@ -38,20 +38,26 @@
 						<value>menu button to change languages</value>
 					</text>
 				</translation>
-				<translation lang="italian">
-					<text id="hello">
-						<value>ci&#xE0;o</value>
-					</text>
-					<text id="hint">
-						<value>"hello" in ital>
-ation>
-				<translation lang="italian">
-					<text id="hello">
-						<value>ci&#xE0;o</value>
-					</text>
-					<text id="hint">
-						<value>"hello" in italian</value>
-					x>test@test.com</regex>
+            </itext>
+            <instance>
+                    <widgets>
+                            <start/>
+                            <end/>
+                            <now/>
+                            <today/>
+                            <deviceid/>
+                            <subscriberid/>
+                            <simid/>
+                            <phonenumber/>
+                            <string/>
+                            <int/>
+                            <decimal>18.31</decimal>
+                            <date>2010-06-15</date>
+                            <select>a c</select>
+                            <select1>8</select1>
+                            <branch>n</branch>
+                            <language/>
+                            <regex>test@test.com</regex>
 					<repeat_a jr:template="">
 						<item_string_a/>
 						<item_int>123456789</item_int>
