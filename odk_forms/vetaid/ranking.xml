@@ -1,0 +1,102 @@
+<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:jr="http://openrosa.org/javarosa">
+	
+  <head>
+    <title>Farm Survey</title>
+
+	<!-- XForm Data Model -->
+	<xf:model id="farm">
+			<xf:instance id="mainInstance">
+				<ranking>
+					<choice_1/>
+					<choice_2/>
+  				</ranking>
+			</xf:instance>
+			
+			<xf:bind id="choice1" nodeset="/ranking/choice_1" type="integer"/>
+			<xf:bind id="choice2" nodeset="/ranking/choice_1" type="integer"/>	
+			
+            				
+		</xf:model>
+	</head>
+	
+	<body>
+	  	<!-- Farm -->
+		<xf:group>
+	  		<xf:label>Ranking from 1-10</xf:label>			
+			<xf:select1 bind="choice1">
+				<xf:label>Choice 1</xf:label>	
+				<xf:item>
+					<xf:label>1</xf:label>
+					<xf:value>1</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>2</xf:label>
+					<xf:value>2</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>3</xf:label>
+					<xf:value>3</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>4</xf:label>
+					<xf:value>4</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>5</xf:label>
+					<xf:value>5</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>6</xf:label>
+					<xf:value>6</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>7</xf:label>
+					<xf:value>7</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>8</xf:label>
+					<xf:value>8</xf:value>
+				</xf:item>												
+			</xf:select1>
+			
+			<xf:select1 bind="choice2">
+				<xf:label>Choice 2</xf:label>
+				<xf:item>
+					<xf:label>1</xf:label>
+					<xf:value>1</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>2</xf:label>
+					<xf:value>2</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>3</xf:label>
+					<xf:value>3</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>4</xf:label>
+					<xf:value>4</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>5</xf:label>
+					<xf:value>5</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>6</xf:label>
+					<xf:value>6</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>7</xf:label>
+					<xf:value>7</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>8</xf:label>
+					<xf:value>8</xf:value>
+				</xf:item>											
+			</xf:select1>
+				
+		</xf:group>			
+	</body>
+</xf:html>

@@ -17,13 +17,15 @@
 							<pigs>0</pigs>
 							<sheep>0</sheep>
 							<chickens>0</chickens>
+							<cattle_type/>
 						</totals>
 						<management>
 							<grazing_type/>
 							<herding_responsibility/>
 							<cattle_mixing/>
 							<buffalo_mixing/>
-							<cattle_type/>
+							<calves_born_this_year/>
+							<calves_and_adults_grazing_together/>
 						</management>							
 					</livestock>
 					
@@ -38,13 +40,16 @@
 			<xf:bind id="noOfPigs" nodeset="/farm/livestock/totals/pigs" required="true()" type="integer"/>	
 			<xf:bind id="noOfSheep" nodeset="/farm/livestock/totals/sheep" required="true()" type="integer"/>				
 			<xf:bind id="noOfChickens" nodeset="/farm/livestock/totals/chickens" required="true()" type="integer"/>
-			<xf:bind id="cattleType" nodeset="/farm/livestock/management/cattle_type" required="true()" type="string"/>
+			<xf:bind id="cattleType" nodeset="/farm/livestock/totals/cattle_type" required="true()" type="string"/>
 			
 			<xf:bind id="grazingType" nodeset="/farm/livestock/management/grazing_type" required="true()" type="string"/>
 			<xf:bind id="herdingResponsibility" nodeset="/farm/livestock/management/herding_responsibility" required="true()" type="string"/>
 			
 			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" required="true()" type="string"/>
 			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" required="true()" type="string"/>
+
+			<xf:bind id="calvesBornThisYear" nodeset="/farm/livestock/management/calves_born_this_year" required="true()" type="string"/>
+			<xf:bind id="calvesAndAdultsGrazingTogether" nodeset="/farm/livestock/management/calves_and_adults_grazing_together" required="true()" type="string"/>
 			
             				
 		</xf:model>
@@ -71,7 +76,7 @@
 			</xf:select1>
 			
 			<xf:group>
-		  		<xf:label>Livestock</xf:label>
+		  		<xf:label>Livestock totals</xf:label>
 		
 				<xf:input bind="noOfCattle">
 					<xf:label>No of Cattle:</xf:label>
@@ -111,89 +116,146 @@
 				</xf:select>
 			</xf:group>			
 
+			<xf:group>
+		  		<xf:label>Livestock Management</xf:label>
+				<xf:select bind="grazingType">
+					<xf:label>What is the main grazing system for your cattle?</xf:label>
+					<xf:item>
+						<xf:label>Zero-grazing</xf:label>
+						<xf:value>zero</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Tethered</xf:label>
+						<xf:value>tethered</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Fenced</xf:label>
+						<xf:value>fenced</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>free_range</xf:label>
+						<xf:value>free_range</xf:value>
+					</xf:item>				
+					<!-- Needs a BRANCH for other -->		
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>		
+				</xf:select>
 
-			<xf:select bind="grazingType">
-				<xf:label>What is the main grazing system for your cattle?</xf:label>
+				<xf:select bind="herdingResponsibility">
+					<xf:label>Who is responsible for the daily herding of your cattle?</xf:label>
+					<xf:item>
+						<xf:label>Men</xf:label>
+						<xf:value>men</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Women</xf:label>
+						<xf:value>women</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Children</xf:label>
+						<xf:value>children</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Hired Labour</xf:label>
+						<xf:value>hired_labour</xf:value>
+					</xf:item>	
+					<xf:item>
+						<xf:label>Communal</xf:label>
+						<xf:value>communal</xf:value>
+					</xf:item>			
+					<!-- Needs a BRANCH for other -->		
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>		
+				</xf:select>
+			
+				<xf:select1 bind="cattleMixing">
+					<xf:label>Do you mix Cattle with Cattle/Buffalo?</xf:label>
+					<!-- Needs a BRANCH for yes -->		
+					<xf:item>
+						<xf:label>Yes</xf:label>
+						<xf:value>yes</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>No</xf:label>
+						<xf:value>no</xf:value>
+					</xf:item>
+				</xf:select1>
+			
+				<xf:select1 bind="buffaloMixing">
+					<xf:label>Do you mix Buffalo with Cattle/Buffalo?</xf:label>
+					<!-- Needs a BRANCH for yes -->		
+					<xf:item>
+						<xf:label>Yes</xf:label>
+						<xf:value>yes</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>No</xf:label>
+						<xf:value>no</xf:value>
+					</xf:item>
+				</xf:select1>						
+
+			
+			<xf:input bind="calvesBornThisYear">
+				<xf:label>How many calves were born in the last 12 months?</xf:label>
+			</xf:input>
+			
+			<xf:select1 bind="calvesAndAdultsGrazingTogether">
+				<xf:label>Do you graze your calves with adult cattle?</xf:label>
 				<xf:item>
-					<xf:label>Zero-grazing</xf:label>
-					<xf:value>zero</xf:value>
+					<xf:label>Yes</xf:label>
+					<xf:value>yes</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>Tethered</xf:label>
-					<xf:value>tethered</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>Fenced</xf:label>
-					<xf:value>fenced</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>free_range</xf:label>
-					<xf:value>free_range</xf:value>
+					<xf:label>No</xf:label>
+					<xf:value>no</xf:value>
 				</xf:item>				
-				<!-- Needs a BRANCH for other -->		
-				<xf:item>
-					<xf:label>Other</xf:label>
-					<xf:value>other</xf:value>
-				</xf:item>		
-			</xf:select>
+			</xf:select1>
+			
+			
+	<!--		<xf:select bind="cattlePurposeRanking">
+				<xf:label>What do you use your cattle for? (Please rank according to importance with 1 being most important)</xf:label>
 
-			<xf:select bind="herdingResponsibility">
-				<xf:label>Who is responsible for the daily herding of your cattle?</xf:label>
 				<xf:item>
-					<xf:label>Men</xf:label>
-					<xf:value>men</xf:value>
+					<xf:label>Milk</xf:label>
+					<xf:value>milk</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>Women</xf:label>
-					<xf:value>women</xf:value>
+					<xf:label>Hide</xf:label>
+					<xf:value>hide</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>Children</xf:label>
-					<xf:value>children</xf:value>
+					<xf:label>Income for school</xf:label>
+					<xf:value>income_for_education</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>Hired Labour</xf:label>
-					<xf:value>hired_labour</xf:value>
-				</xf:item>	
-				<xf:item>
-					<xf:label>Communal</xf:label>
-					<xf:value>communal</xf:value>
-				</xf:item>			
-				<!-- Needs a BRANCH for other -->		
-				<xf:item>
-					<xf:label>Other</xf:label>
-					<xf:value>other</xf:value>
-				</xf:item>		
-			</xf:select>
-			
-			<xf:select bind="cattleMixing">
-				<xf:label>Do you mix Cattle with Cattle/Buffalo?</xf:label>
-				<!-- Needs a BRANCH for yes -->		
-				<xf:item>
-					<xf:label>Yes</xf:label>
-					<xf:value>yes</xf:value>
+					<xf:label>social statues</xf:label>
+					<xf:value>social_statues</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>No</xf:label>
-					<xf:value>no</xf:value>
-				</xf:item>
-			</xf:select>
-			
-			<xf:select bind="buffaloMixing">
-				<xf:label>Do you mix Buffalo with Cattle/Buffalo?</xf:label>
-				<!-- Needs a BRANCH for yes -->		
-				<xf:item>
-					<xf:label>Yes</xf:label>
-					<xf:value>yes</xf:value>
+					<xf:label>meat</xf:label>
+					<xf:value>meat</xf:value>
 				</xf:item>
 				<xf:item>
-					<xf:label>No</xf:label>
-					<xf:value>no</xf:value>
+					<xf:label>draft power</xf:label>
+					<xf:value>draft_power</xf:value>
 				</xf:item>
-			</xf:select>			
-			
-
-			
+				<xf:item>
+					<xf:label>dowry</xf:label>
+					<xf:value>dowry</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>girfts</xf:label>
+					<xf:value>girfts</xf:value>
+				</xf:item>												
+			</xf:select>							
+			-->		
+						
+				
+			</xf:group>			
 		</xf:group>
 	</body>
 </xf:html>
