@@ -11,36 +11,40 @@
 				<farm>
 					<enterprise/>
 					<livestock>
-						<cattle>0</cattle>
-						<goats>0</goats>
-						<pigs>0</pigs>
-						<sheep>0</sheep>
-						<chickens>0</chickens>
-						<cattle_type/>
+						<totals>
+							<cattle>0</cattle>
+							<goats>0</goats>
+							<pigs>0</pigs>
+							<sheep>0</sheep>
+							<chickens>0</chickens>
+						</totals>
+						<management>
+							<grazing_type/>
+							<herding_responsibility/>
+							<cattle_mixing/>
+							<buffalo_mixing/>
+							<cattle_type/>
+						</management>							
 					</livestock>
 					
-					<grazing_type/>
-					<herding_responsibility/>
-					<cattle_mixing/>
-					<buffalo_mixing/>
   				</farm>
 			</xf:instance>
 			
 			<!-- Farm Details -->
 			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
-			<xf:bind id="noOfCattle" nodeset="/farm/livestock/cattle" required="true()" type="integer"/>
-			<xf:bind id="noOfGoats" nodeset="/farm/livestock/goats" required="true()" type="integer"/>	
+			<xf:bind id="noOfCattle" nodeset="/farm/livestock/totals/cattle" required="true()" type="integer"/>
+			<xf:bind id="noOfGoats" nodeset="/farm/livestock/totals/goats" required="true()" type="integer"/>	
 
-			<xf:bind id="noOfPigs" nodeset="/farm/livestock/pigs" required="true()" type="integer"/>	
-			<xf:bind id="noOfSheep" nodeset="/farm/livestock/sheep" required="true()" type="integer"/>				
-			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>
-			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="string"/>
+			<xf:bind id="noOfPigs" nodeset="/farm/livestock/totals/pigs" required="true()" type="integer"/>	
+			<xf:bind id="noOfSheep" nodeset="/farm/livestock/totals/sheep" required="true()" type="integer"/>				
+			<xf:bind id="noOfChickens" nodeset="/farm/livestock/totals/chickens" required="true()" type="integer"/>
+			<xf:bind id="cattleType" nodeset="/farm/livestock/management/cattle_type" required="true()" type="string"/>
 			
-			<xf:bind id="grazingType" nodeset="/farm/grazing_type" required="true()" type="string"/>
-			<xf:bind id="herdingResponsibility" nodeset="/farm/herding_responsibility" required="true()" type="string"/>
+			<xf:bind id="grazingType" nodeset="/farm/livestock/management/grazing_type" required="true()" type="string"/>
+			<xf:bind id="herdingResponsibility" nodeset="/farm/livestock/management/herding_responsibility" required="true()" type="string"/>
 			
-			<xf:bind id="cattleMixing" nodeset="/farm/cattle_mixing" required="true()" type="string"/>
-			<xf:bind id="buffaloMixing" nodeset="/farm/buffalo_mixing" required="true()" type="string"/>
+			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" required="true()" type="string"/>
+			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" required="true()" type="string"/>
 			
             				
 		</xf:model>
