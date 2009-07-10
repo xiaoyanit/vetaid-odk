@@ -45,11 +45,11 @@
 			<xf:bind id="grazingType" nodeset="/farm/livestock/management/grazing_type" required="true()" type="string"/>
 			<xf:bind id="herdingResponsibility" nodeset="/farm/livestock/management/herding_responsibility" required="true()" type="string"/>
 			
-			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" required="true()" type="string"/>
-			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" required="true()" type="string"/>
+			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" required="true()" type="boolean"/>
+			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" required="true()" type="boolean"/>
 
 			<xf:bind id="calvesBornThisYear" nodeset="/farm/livestock/management/calves_born_this_year" required="true()" type="string"/>
-			<xf:bind id="calvesAndAdultsGrazingTogether" nodeset="/farm/livestock/management/calves_and_adults_grazing_together" required="true()" type="string"/>
+			<xf:bind id="calvesAndAdultsGrazingTogether" nodeset="/farm/livestock/management/calves_and_adults_grazing_together" required="true()" type="boolean"/>
 			
             				
 		</xf:model>
@@ -177,11 +177,11 @@
 					<!-- Needs a BRANCH for yes -->		
 					<xf:item>
 						<xf:label>Yes</xf:label>
-						<xf:value>yes</xf:value>
+						<xf:value>true</xf:value>
 					</xf:item>
 					<xf:item>
 						<xf:label>No</xf:label>
-						<xf:value>no</xf:value>
+						<xf:value>false</xf:value>
 					</xf:item>
 				</xf:select1>
 			
@@ -190,11 +190,11 @@
 					<!-- Needs a BRANCH for yes -->		
 					<xf:item>
 						<xf:label>Yes</xf:label>
-						<xf:value>yes</xf:value>
+						<xf:value>true</xf:value>
 					</xf:item>
 					<xf:item>
 						<xf:label>No</xf:label>
-						<xf:value>no</xf:value>
+						<xf:value>false</xf:value>
 					</xf:item>
 				</xf:select1>						
 
@@ -207,11 +207,11 @@
 				<xf:label>Do you graze your calves with adult cattle?</xf:label>
 				<xf:item>
 					<xf:label>Yes</xf:label>
-					<xf:value>yes</xf:value>
+					<xf:value>true</xf:value>
 				</xf:item>
 				<xf:item>
 					<xf:label>No</xf:label>
-					<xf:value>no</xf:value>
+					<xf:value>false</xf:value>
 				</xf:item>				
 			</xf:select1>
 			

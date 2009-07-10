@@ -366,6 +366,7 @@
 			
 			<bind nodeset="tmp/normalized/classification/cough" calculate="
 			  if(/imci/tmp/normalized/has_cough,
+			
 			    if(/imci/cough/indrawing = 'yes' or /imci/cough/stridor = 'yes' or count-selected(/imci/preamble/danger_signs) > 0, 'severe-pneumonia',
 			    if(/imci/tmp/normalized/fast_breath, 'pneumonia',
 				  if(/imci/cough/length = 'over30', 'persistent-cold', 'cold'))),
