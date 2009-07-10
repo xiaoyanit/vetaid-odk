@@ -15,18 +15,22 @@
 						<goats/>
 						<pigs/>
 						<sheep/>
-						<chickens/>																		
+						<chickens/>
+						<cattle_type/>
 					</livestock>
   				</farm>
 			</xf:instance>
 			
+			<!-- Farm Details -->
 			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
 			<xf:bind id="noOfCattle" nodeset="/farm/livestock/cattle" required="true()" type="integer"/>
 			<xf:bind id="noOfGoats" nodeset="/farm/livestock/goats" required="true()" type="integer"/>	
 
 			<xf:bind id="noOfPigs" nodeset="/farm/livestock/pigs" required="true()" type="integer"/>	
 			<xf:bind id="noOfSheep" nodeset="/farm/livestock/sheep" required="true()" type="integer"/>				
-			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>				
+			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>
+
+			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="integer"/>				
             				
 		</xf:model>
 	</head>
@@ -73,6 +77,23 @@
 				<xf:input bind="noOfChickens">
 					<xf:label>No of Chickens:</xf:label>
 				</xf:input>
+				
+				<xf:select bind="cattleType" >
+					<xf:label>What Type of cattle do you have?</xf:label>
+					<xf:item>
+						<xf:label>Zebu (bos indicus)</xf:label>
+						<xf:value>zebu</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Exotic (bos taurus)</xf:label>
+						<xf:value>exotic</xf:value>
+					</xf:item>
+					<!-- Needs a BRANCH for other -->		
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>		
+				</xf:select>
 			</xf:group>			
 			
 		</xf:group>
