@@ -21,6 +21,8 @@
 					
 					<grazing_type/>
 					<herding_responsibility/>
+					<cattle_mixing/>
+					<buffalo_mixing/>
   				</farm>
 			</xf:instance>
 			
@@ -32,10 +34,14 @@
 			<xf:bind id="noOfPigs" nodeset="/farm/livestock/pigs" required="true()" type="integer"/>	
 			<xf:bind id="noOfSheep" nodeset="/farm/livestock/sheep" required="true()" type="integer"/>				
 			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>
-			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="integer"/>
+			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="string"/>
 			
-			<xf:bind id="grazingType" nodeset="/farm/grazing_type" required="true()" type="integer"/>
-			<xf:bind id="herdingResponsibility" nodeset="/farm/herding_responsibility" required="true()" type="integer"/>
+			<xf:bind id="grazingType" nodeset="/farm/grazing_type" required="true()" type="string"/>
+			<xf:bind id="herdingResponsibility" nodeset="/farm/herding_responsibility" required="true()" type="string"/>
+			
+			<xf:bind id="cattleMixing" nodeset="/farm/cattle_mixing" required="true()" type="string"/>
+			<xf:bind id="buffaloMixing" nodeset="/farm/buffalo_mixing" required="true()" type="string"/>
+			
             				
 		</xf:model>
 	</head>
@@ -155,6 +161,33 @@
 					<xf:value>other</xf:value>
 				</xf:item>		
 			</xf:select>
+			
+			<xf:select bind="cattleMixing">
+				<xf:label>Do you mix Cattle with Cattle/Buffalo?</xf:label>
+				<!-- Needs a BRANCH for yes -->		
+				<xf:item>
+					<xf:label>Yes</xf:label>
+					<xf:value>yes</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>No</xf:label>
+					<xf:value>no</xf:value>
+				</xf:item>
+			</xf:select>
+			
+			<xf:select bind="buffaloMixing">
+				<xf:label>Do you mix Buffalo with Cattle/Buffalo?</xf:label>
+				<!-- Needs a BRANCH for yes -->		
+				<xf:item>
+					<xf:label>Yes</xf:label>
+					<xf:value>yes</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>No</xf:label>
+					<xf:value>no</xf:value>
+				</xf:item>
+			</xf:select>			
+			
 
 			
 		</xf:group>
