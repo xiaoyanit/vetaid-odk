@@ -216,7 +216,10 @@
 			</xf:select1>
 			
 			
-	<!--		<xf:select bind="cattlePurposeRanking">
+	<!--	
+Instead do eight different forms most important, next, next, next, next
+		
+		<xf:select bind="cattlePurposeRanking">
 				<xf:label>What do you use your cattle for? (Please rank according to importance with 1 being most important)</xf:label>
 
 				<xf:item>

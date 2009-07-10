@@ -1,21 +1,22 @@
 <?xml version="1.0"?>
-<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
-	xmlns:ev="http://www.w3.org/2001/xml-events"
-	xmlns:jr="http://openrosa.org/javarosa"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xf:html xmlns="http://www.w3.org/2002/xforms"
+       xmlns:h="http://www.w3.org/1999/xhtml"
+       xmlns:ev="http://www.w3.org/2001/xml-events"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       xmlns:jr="http://openrosa.org/javarosa"
+	   xmlns:xf="http://www.w3.org/2002/xforms">
 	
 	<head>
     	<title>Farm Survey</title>
 		<xf:model id="farm">
 			<xf:instance id="mainInstance">
 				<ranking>
-					<choice_1/>
-					<choice_2/>
+					<choice1/>
+					<choice2/>
   				</ranking>
 			</xf:instance>
 			
-			<xf:bind id="choice1" nodeset="/ranking/choice_1" type="string"/>
-			<xf:bind id="choice2" nodeset="/ranking/choice_2" calculate="if(1=1, /ranking/choice_2[2]:label = '1',   /ranking/choice_2[2]:label = '9')" type="string"/>				
+			<xf:bind id="choice1" nodeset="/ranking/choice1" type="string"/>				
             				
 		</xf:model>
 	</head>
@@ -35,14 +36,11 @@
 				</xf:item>											
 			</xf:select1>
 			
-			<xf:select bind="choice2">
-				<xf:label>Choice 2</xf:label>
-				<xf:item>
-					<xf:label>value</xf:label>
-					<xf:value>2</xf:value>
-				</xf:item>
-			</xf:select>	  
-			
+			<xf:select1 ref="/ranking/choice2">
+				<xf:label>This is <xf:output value="if(/ranking/choice1 = '1', 'madeit', 'didn't makeit')" /> something</xf:label>
+				<xf:item><xf:label>Agree</xf:label><xf:value>agree</xf:value></xf:item>
+				<xf:item><xf:label>Disagree</xf:label><xf:value>disagree</xf:value></xf:item>
+			</xf:select1>	  
 				
 		</xf:group>			
 	</body>
