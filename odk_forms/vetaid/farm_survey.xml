@@ -1,0 +1,57 @@
+<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:jr="http://openrosa.org/javarosa">
+	
+  <head>
+    <title>Farm Survey</title>
+
+	<!-- XForm Data Model -->
+	<xf:model id="farm">
+			<xf:instance id="mainInstance">
+				<farm>
+					<enterprise/>
+					<livestocktotals>
+						<cattle/>
+						<goat/>
+					</livestocktotals>
+  				</farm>
+			</xf:instance>
+			
+			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
+			<xf:bind id="cattleNo" nodeset="/farm/livestocktotals/cattle" required="true()" type="integer"/>
+			<xf:bind id="goatNo" nodeset="/farm/livestocktotals/goat" required="true()" type="integer"/>	
+
+			<xf:bind id="SurveyHouseholdID" nodeset="/data/householdInfo/survey_household_id" required="true()" type="integer" />
+            				
+		</xf:model>
+	</head>
+	
+	<body>
+	  	<!-- Farm -->
+		<xf:group>
+			<xf:select1 bind="enterprise">
+				<label>What is your main enterprise?</label>
+				<xf:item>
+					<xf:label>Crop farmer</xf:label>
+					<xf:value>crop_farmer</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Livestock farmer</xf:label>
+					<xf:value>livestock_farmer</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Both</xf:label>
+					<xf:value>both</xf:value>
+				</xf:item>
+			</xf:select1>
+			
+			<xf:input bind="cattleNo">
+				<xf:label>No of Cattle:</xf:label>
+			</xf:input>
+			
+			<xf:input bind="goatNo">
+				<xf:label>No of goats:</xf:label>
+			</xf:input>
+		</xf:group>
+	</body>
+</xf:html>
