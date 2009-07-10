@@ -10,18 +10,23 @@
 			<xf:instance id="mainInstance">
 				<farm>
 					<enterprise/>
-					<livestocktotals>
+					<livestock>
 						<cattle/>
-						<goat/>
-					</livestocktotals>
+						<goats/>
+						<pigs/>
+						<sheep/>
+						<chickens/>																		
+					</livestock>
   				</farm>
 			</xf:instance>
 			
 			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
-			<xf:bind id="cattleNo" nodeset="/farm/livestocktotals/cattle" required="true()" type="integer"/>
-			<xf:bind id="goatNo" nodeset="/farm/livestocktotals/goat" required="true()" type="integer"/>	
+			<xf:bind id="noOfCattle" nodeset="/farm/livestock/cattle" required="true()" type="integer"/>
+			<xf:bind id="noOfGoats" nodeset="/farm/livestock/goats" required="true()" type="integer"/>	
 
-			<xf:bind id="SurveyHouseholdID" nodeset="/data/householdInfo/survey_household_id" required="true()" type="integer" />
+			<xf:bind id="noOfPigs" nodeset="/farm/livestock/pigs" required="true()" type="integer"/>	
+			<xf:bind id="noOfSheep" nodeset="/farm/livestock/sheep" required="true()" type="integer"/>				
+			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>				
             				
 		</xf:model>
 	</head>
@@ -29,6 +34,7 @@
 	<body>
 	  	<!-- Farm -->
 		<xf:group>
+	  		<xf:label>Farm Details</xf:label>
 			<xf:select1 bind="enterprise">
 				<label>What is your main enterprise?</label>
 				<xf:item>
@@ -45,13 +51,30 @@
 				</xf:item>
 			</xf:select1>
 			
-			<xf:input bind="cattleNo">
-				<xf:label>No of Cattle:</xf:label>
-			</xf:input>
+			<xf:group>
+		  		<xf:label>Livestock</xf:label>
+		
+				<xf:input bind="noOfCattle">
+					<xf:label>No of Cattle:</xf:label>
+				</xf:input>
 			
-			<xf:input bind="goatNo">
-				<xf:label>No of goats:</xf:label>
-			</xf:input>
+				<xf:input bind="noOfGoats">
+					<xf:label>No of goats:</xf:label>
+				</xf:input>
+			
+				<xf:input bind="noOfPigs">
+					<xf:label>No of Pigs:</xf:label>
+				</xf:input>			
+			
+				<xf:input bind="noOfSheep">
+					<xf:label>No of Sheep:</xf:label>
+				</xf:input>			
+			
+				<xf:input bind="noOfChickens">
+					<xf:label>No of Chickens:</xf:label>
+				</xf:input>
+			</xf:group>			
+			
 		</xf:group>
 	</body>
 </xf:html>
