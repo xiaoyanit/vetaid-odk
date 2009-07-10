@@ -11,13 +11,16 @@
 				<farm>
 					<enterprise/>
 					<livestock>
-						<cattle/>
-						<goats/>
-						<pigs/>
-						<sheep/>
-						<chickens/>
+						<cattle>0</cattle>
+						<goats>0</goats>
+						<pigs>0</pigs>
+						<sheep>0</sheep>
+						<chickens>0</chickens>
 						<cattle_type/>
 					</livestock>
+					
+					<grazing_type/>
+					<herding_responsibility/>
   				</farm>
 			</xf:instance>
 			
@@ -29,8 +32,10 @@
 			<xf:bind id="noOfPigs" nodeset="/farm/livestock/pigs" required="true()" type="integer"/>	
 			<xf:bind id="noOfSheep" nodeset="/farm/livestock/sheep" required="true()" type="integer"/>				
 			<xf:bind id="noOfChickens" nodeset="/farm/livestock/chickens" required="true()" type="integer"/>
-
-			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="integer"/>				
+			<xf:bind id="cattleType" nodeset="/farm/livestock/cattle_type" required="true()" type="integer"/>
+			
+			<xf:bind id="grazingType" nodeset="/farm/grazing_type" required="true()" type="integer"/>
+			<xf:bind id="herdingResponsibility" nodeset="/farm/herding_responsibility" required="true()" type="integer"/>
             				
 		</xf:model>
 	</head>
@@ -95,6 +100,62 @@
 					</xf:item>		
 				</xf:select>
 			</xf:group>			
+
+
+			<xf:select bind="grazingType">
+				<xf:label>What is the main grazing system for your cattle?</xf:label>
+				<xf:item>
+					<xf:label>Zero-grazing</xf:label>
+					<xf:value>zero</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Tethered</xf:label>
+					<xf:value>tethered</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Fenced</xf:label>
+					<xf:value>fenced</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>free_range</xf:label>
+					<xf:value>free_range</xf:value>
+				</xf:item>				
+				<!-- Needs a BRANCH for other -->		
+				<xf:item>
+					<xf:label>Other</xf:label>
+					<xf:value>other</xf:value>
+				</xf:item>		
+			</xf:select>
+
+			<xf:select bind="herdingResponsibility">
+				<xf:label>Who is responsible for the daily herding of your cattle?</xf:label>
+				<xf:item>
+					<xf:label>Men</xf:label>
+					<xf:value>men</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Women</xf:label>
+					<xf:value>women</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Children</xf:label>
+					<xf:value>children</xf:value>
+				</xf:item>
+				<xf:item>
+					<xf:label>Hired Labour</xf:label>
+					<xf:value>hired_labour</xf:value>
+				</xf:item>	
+				<xf:item>
+					<xf:label>Communal</xf:label>
+					<xf:value>communal</xf:value>
+				</xf:item>			
+				<!-- Needs a BRANCH for other -->		
+				<xf:item>
+					<xf:label>Other</xf:label>
+					<xf:value>other</xf:value>
+				</xf:item>		
+			</xf:select>
+
 			
 		</xf:group>
 	</body>
