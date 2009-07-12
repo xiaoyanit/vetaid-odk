@@ -26,6 +26,14 @@
 							<buffalo_mixing/>
 							<calves_born_this_year/>
 							<calves_and_adults_grazing_together/>
+							<cattle_purpose_rank_1/>
+							<cattle_purpose_rank_2/>
+							<cattle_purpose_rank_3/>
+							<cattle_purpose_rank_4/>
+							<cattle_purpose_rank_5/>
+							<cattle_purpose_rank_6/>
+							<cattle_purpose_rank_7/>
+							<cattle_purpose_rank_8/>																																																	
 						</management>							
 					</livestock>
 					
@@ -48,9 +56,17 @@
 			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" required="true()" type="boolean"/>
 			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" required="true()" type="boolean"/>
 
-			<xf:bind id="calvesBornThisYear" nodeset="/farm/livestock/management/calves_born_this_year" required="true()" type="string"/>
+			<xf:bind id="calvesBornThisYear" nodeset="/farm/livestock/management/calves_born_this_year" required="true()" type="integer"/>
 			<xf:bind id="calvesAndAdultsGrazingTogether" nodeset="/farm/livestock/management/calves_and_adults_grazing_together" required="true()" type="boolean"/>
-			
+	
+			<xf:bind id="cattlePurposeRanking1" nodeset="/farm/livestock/management/cattle_purpose_rank_1" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking2" nodeset="/farm/livestock/management/cattle_purpose_rank_2" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking3" nodeset="/farm/livestock/management/cattle_purpose_rank_3" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking4" nodeset="/farm/livestock/management/cattle_purpose_rank_4" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking5" nodeset="/farm/livestock/management/cattle_purpose_rank_5" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking6" nodeset="/farm/livestock/management/cattle_purpose_rank_6" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking7" nodeset="/farm/livestock/management/cattle_purpose_rank_7" required="true()" type="string"/>
+			<xf:bind id="cattlePurposeRanking8" nodeset="/farm/livestock/management/cattle_purpose_rank_8" required="true()" type="string"/>																								
             				
 		</xf:model>
 	</head>
@@ -214,50 +230,301 @@
 					<xf:value>false</xf:value>
 				</xf:item>				
 			</xf:select1>
+		</xf:group>
 			
-			
-	<!--	
-Instead do eight different forms most important, next, next, next, next
-		
-		<xf:select bind="cattlePurposeRanking">
-				<xf:label>What do you use your cattle for? (Please rank according to importance with 1 being most important)</xf:label>
+		<!-- Rank the purpose of cattle holding  as a series of 8 selections -->
+		<xf:group>
+	  		<xf:label>What do you use your cattle for? 1-8</xf:label>		
+			<xf:select1 bind="cattlePurposeRanking1">
+					<xf:label>Most important purpose:</xf:label>
+					<xf:item>
+						<xf:label>Milk</xf:label>
+						<xf:value>milk</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Hide</xf:label>
+						<xf:value>hide</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Income for school</xf:label>
+						<xf:value>income_for_education</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Social statues</xf:label>
+						<xf:value>social_statues</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Meat</xf:label>
+						<xf:value>meat</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Draft power</xf:label>
+						<xf:value>draft_power</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Dowry</xf:label>
+						<xf:value>dowry</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Girfts</xf:label>
+						<xf:value>girfts</xf:value>
+					</xf:item>												
+			</xf:select1>							
 
-				<xf:item>
-					<xf:label>Milk</xf:label>
-					<xf:value>milk</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>Hide</xf:label>
-					<xf:value>hide</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>Income for school</xf:label>
-					<xf:value>income_for_education</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>social statues</xf:label>
-					<xf:value>social_statues</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>meat</xf:label>
-					<xf:value>meat</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>draft power</xf:label>
-					<xf:value>draft_power</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>dowry</xf:label>
-					<xf:value>dowry</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>girfts</xf:label>
-					<xf:value>girfts</xf:value>
-				</xf:item>												
-			</xf:select>							
-			-->		
-						
-				
+
+			<xf:select1 bind="cattlePurposeRanking2">
+					<xf:label>Second most important purpose</xf:label>
+					<xf:item>
+						<xf:label>Milk</xf:label>
+						<xf:value>milk</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Hide</xf:label>
+						<xf:value>hide</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Income for school</xf:label>
+						<xf:value>income_for_education</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Social statues</xf:label>
+						<xf:value>social_statues</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Meat</xf:label>
+						<xf:value>meat</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Draft power</xf:label>
+						<xf:value>draft_power</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Dowry</xf:label>
+						<xf:value>dowry</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Girfts</xf:label>
+						<xf:value>girfts</xf:value>
+					</xf:item>												
+			</xf:select1>							
+
+
+			<xf:select1 bind="cattlePurposeRanking3">
+						<xf:label>Third most important purpose:</xf:label>
+						<xf:item>
+							<xf:label>Milk</xf:label>
+							<xf:value>milk</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Hide</xf:label>
+							<xf:value>hide</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Income for school</xf:label>
+							<xf:value>income_for_education</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Social statues</xf:label>
+							<xf:value>social_statues</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Meat</xf:label>
+							<xf:value>meat</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Draft power</xf:label>
+							<xf:value>draft_power</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Dowry</xf:label>
+							<xf:value>dowry</xf:value>
+						</xf:item>
+						<xf:item>
+							<xf:label>Girfts</xf:label>
+							<xf:value>girfts</xf:value>
+						</xf:item>												
+				</xf:select1>							
+											
+
+				<xf:select1 bind="cattlePurposeRanking4">
+							<xf:label>Fourth most important purpose:</xf:label>
+							<xf:item>
+								<xf:label>Milk</xf:label>
+								<xf:value>milk</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Hide</xf:label>
+								<xf:value>hide</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Income for school</xf:label>
+								<xf:value>income_for_education</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Social statues</xf:label>
+								<xf:value>social_statues</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Meat</xf:label>
+								<xf:value>meat</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Draft power</xf:label>
+								<xf:value>draft_power</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Dowry</xf:label>
+								<xf:value>dowry</xf:value>
+							</xf:item>
+							<xf:item>
+								<xf:label>Girfts</xf:label>
+								<xf:value>girfts</xf:value>
+							</xf:item>												
+					</xf:select1>							
+
+					<xf:select1 bind="cattlePurposeRanking5">
+								<xf:label>Fifth most important purpose</xf:label>
+								<xf:item>
+									<xf:label>Milk</xf:label>
+									<xf:value>milk</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Hide</xf:label>
+									<xf:value>hide</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Income for school</xf:label>
+									<xf:value>income_for_education</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Social statues</xf:label>
+									<xf:value>social_statues</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Meat</xf:label>
+									<xf:value>meat</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Draft power</xf:label>
+									<xf:value>draft_power</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Dowry</xf:label>
+									<xf:value>dowry</xf:value>
+								</xf:item>
+								<xf:item>
+									<xf:label>Girfts</xf:label>
+									<xf:value>girfts</xf:value>
+								</xf:item>												
+						</xf:select1>							
+
+						<xf:select1 bind="cattlePurposeRanking6">
+									<xf:label>Sixth most important purpose:</xf:label>
+									<xf:item>
+										<xf:label>Milk</xf:label>
+										<xf:value>milk</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Hide</xf:label>
+										<xf:value>hide</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Income for school</xf:label>
+										<xf:value>income_for_education</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Social statues</xf:label>
+										<xf:value>social_statues</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Meat</xf:label>
+										<xf:value>meat</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Draft power</xf:label>
+										<xf:value>draft_power</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Dowry</xf:label>
+										<xf:value>dowry</xf:value>
+									</xf:item>
+									<xf:item>
+										<xf:label>Girfts</xf:label>
+										<xf:value>girfts</xf:value>
+									</xf:item>												
+							</xf:select1>							
+
+							<xf:select1 bind="cattlePurposeRanking7">
+										<xf:label>Seventh most important purpose:</xf:label>
+										<xf:item>
+											<xf:label>Milk</xf:label>
+											<xf:value>milk</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Hide</xf:label>
+											<xf:value>hide</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Income for school</xf:label>
+											<xf:value>income_for_education</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Social statues</xf:label>
+											<xf:value>social_statues</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Meat</xf:label>
+											<xf:value>meat</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Draft power</xf:label>
+											<xf:value>draft_power</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Dowry</xf:label>
+											<xf:value>dowry</xf:value>
+										</xf:item>
+										<xf:item>
+											<xf:label>Girfts</xf:label>
+											<xf:value>girfts</xf:value>
+										</xf:item>												
+								</xf:select1>
+									
+								<xf:select1 bind="cattlePurposeRanking8">
+											<xf:label>Final purpose:</xf:label>
+											<xf:item>
+												<xf:label>Milk</xf:label>
+												<xf:value>milk</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Hide</xf:label>
+												<xf:value>hide</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Income for school</xf:label>
+												<xf:value>income_for_education</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Social statues</xf:label>
+												<xf:value>social_statues</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Meat</xf:label>
+												<xf:value>meat</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Draft power</xf:label>
+												<xf:value>draft_power</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Dowry</xf:label>
+												<xf:value>dowry</xf:value>
+											</xf:item>
+											<xf:item>
+												<xf:label>Girfts</xf:label>
+												<xf:value>girfts</xf:value>
+											</xf:item>												
+								</xf:select1>																																																														
 			</xf:group>			
 		</xf:group>
 	</body>
