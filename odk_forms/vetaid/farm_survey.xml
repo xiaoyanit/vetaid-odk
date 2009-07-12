@@ -50,6 +50,7 @@
 						<deaths_aged_one_to_four_months/>
 						<deaths_aged_four_to_twelve_months/>
 						<deaths_aged_more_than_twelve_months/>
+						<top_rated_desired_improvements/>
 					</cattle_health_management>
   				</farm>				
 				
@@ -99,6 +100,8 @@
 			<xf:bind id="deathsAgedOneToFourMonths" nodeset="/farm/cattle_health_management/deaths_aged_one_to_four_months" required="true()" type="integer"/>
 			<xf:bind id="deathsAgedFourToTwelveMonths" nodeset="/farm/cattle_health_management/deaths_aged_four_to_twelve_months" required="true()" type="integer"/>
 			<xf:bind id="deathsAgedMoreThan12Months" nodeset="/farm/cattle_health_management/deaths_aged_more_than_twelve_months" required="true()" type="integer"/>
+			<xf:bind id="topRatedDesiredImprovements" nodeset="/farm/cattle_health_management/top_rated_desired_improvements" type="string"/>						
+						
 						
 		</xf:model>
 	</head>
@@ -677,8 +680,64 @@
 					</xf:input>
 				</xf:group>						
 				
+				<xf:select bind="topRatedDesiredImprovements">
+					<xf:label>Which of the following would benefit you most? Please list the top three:</xf:label>
+					<xf:item>
+						<xf:label>Increased weight gain</xf:label>
+						<xf:value>increased_weight_gain</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Decreased calf death</xf:label>
+						<xf:value>decreased_calf_death</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>More calves per cow</xf:label>
+						<xf:value>more_calves_per_cow</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Increased milk yield</xf:label>
+						<xf:value>increased_milk_yield</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Decreased herd illness</xf:label>
+						<xf:value>decreased_herd_illness</xf:value>
+					</xf:item>					
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>
+				</xf:select>
 
+				<xf:select bind="topRatedDesiredImprovements">
+					<xf:label>Which of the following would benefit you most? Please list the top three:</xf:label>
+					<xf:item>
+						<xf:label>Increased weight gain</xf:label>
+						<xf:value>increased_weight_gain</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Decreased calf death</xf:label>
+						<xf:value>decreased_calf_death</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>More calves per cow</xf:label>
+						<xf:value>more_calves_per_cow</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Increased milk yield</xf:label>
+						<xf:value>increased_milk_yield</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Decreased herd illness</xf:label>
+						<xf:value>decreased_herd_illness</xf:value>
+					</xf:item>					
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>
+				</xf:select>
 				
+				
+								
 			</xf:group>		
 			
 		</xf:group>
