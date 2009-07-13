@@ -1,0 +1,19 @@
+<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:jr="http://openrosa.org/javarosa">
+	
+  <head>
+    <title>Full XML empty form</title>
+
+		<!-- XForm Data Model -->
+		<xf:model id="farm">
+				<xf:instance id="mainInstance">
+					<farm>
+		  			</farm>				
+				</xf:instance>
+		</xf:model>
+	</head>
+
+	<body>
+	</body>
+</xf:html>

@@ -1,0 +1,66 @@
+<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:jr="http://openrosa.org/javarosa">
+	
+  <head>
+    <title>Animal Core Physical</title>
+
+		<!-- XForm Data Model -->
+		<xf:model id="farm">
+			<xf:instance id="mainInstance">
+				<animal>
+					<id/>
+					<farm_id/>
+					<sex/>
+					<breed/>
+					<breed_other/>					
+					<age/>	
+					<diarrhea/>
+					<diarrhea_character/>					
+					<temperature/>
+					<lymphadenopathy/>
+					<lymphadenopathyComment/>					
+					<body_condition/>
+					<ticks_on_animal/>
+					<appetite_change/>
+					<mucus_membrane_colour/>
+					<nasal_discharge/>
+					<nasal_discharge_character/>					
+					<nasal_discharge_type/>
+					<nasal_discharge_severity/>
+					<respiratory_rate>
+		  		</animal>				
+			</xf:instance>
+			
+			<!-- Animal details -->
+			<xf:bind id="id" nodeset="/animal/id" type="string"/>
+			<xf:bind id="farmId" nodeset="/animal/farm_id" type="string"/>
+			<xf:bind id="sex" nodeset="/animal/sex" type="string"/>
+			<xf:bind id="breed" nodeset="/animal/breed" type="string"/>
+			<xf:bind id="breedOther" nodeset="/animal/breed_other" type="string"/>		
+			<xf:bind id="age" nodeset="/animal/age" type="integer"/>
+			<xf:bind id="diarrhea" nodeset="/animal/diarrhea" type="integer"/>
+			<xf:bind id="diarrheaCharacter" nodeset="/animal/diarrhea_character" type="integer"/>		
+			<xf:bind id="temperature" nodeset="/animal/temperature" type="integer"/>
+			<xf:bind id="lymphadenopathy" nodeset="/animal/lymphadenopathy" type="integer"/>
+			<xf:bind id="lymphadenopathyComment" nodeset="/animal/lymphadenopathyComment" type="integer"/>		
+			<xf:bind id="bodyCondition" nodeset="/animal/body_condition" type="integer"/>		
+			<xf:bind id="ticksOnAnimal" nodeset="/animal/ticks_on_animal" type="integer"/>
+			<xf:bind id="appetiteChange" nodeset="/animal/appetite_change" type="integer"/>
+			<xf:bind id="mucusMembraneColour" nodeset="/animal/mucus_membrane_colour" type="integer"/>
+			<xf:bind id="mucusMembraneColourComment" nodeset="/animal/mucus_membrane_colour_comment" type="string"/>		
+			<xf:bind id="nasalDischarge" nodeset="/animal/nasal_discharge" type="integer"/>
+			<xf:bind id="nasalDischargeCharacter" nodeset="/animal/nasal_discharge_character" type="string"/>		
+			<xf:bind id="nasalDischargeType" nodeset="/animal/nasal_discharge_type" type="integer"/>		
+			<xf:bind id="nasalDischargeSeverity" nodeset="/animal/nasal_discharge_severity" type="integer"/>
+			<xf:bind id="respiratoryRate" nodeset="/animal/respiratory_rate" type="integer"/>			
+			
+		</xf:model>
+	</head>
+	<body>
+
+				
+	</body>
+</xf:html>		
+
+
