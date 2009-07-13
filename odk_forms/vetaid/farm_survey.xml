@@ -73,15 +73,21 @@
 						<date_ecf_vaccination1/>
 						<date_ecf_vaccination2/>
 						<no_cattle_vaccinated/>				
-						<age_cattle_vaccinated/>
-						
+						<age_cattle_vaccinated/>					
 						<age_of_cattle_vaccinated/>
 						<cattle_showing_signs_since_ecf_vaccination/>
 						<time_from_vaccination_to_signs_of_ecf/>	
 						<age_of_cattle_showing_signs_of_ecf/>
 						<desc_ecf_symptoms/>						
-						
-										
+						<deaths_have_occured_since_ecf_vaccination/>
+						<no_deaths_since_ecf_vaccination/>
+						<times_from_ecf_vaccination_to_death/>
+						<ages_Of_ecf_deaths_since_vaccination/>
+						<incented_to_ecf_vaccinate/>
+						<reasons_to_not_ecf_vaccinate/>				
+						<rating_of_ecf_vaccination_effect/>
+						<recieved_ecf_vaccination_info/>
+		
 					</ecf_infection_treatment_vaccination>										
   				</farm>				
 		
@@ -164,6 +170,20 @@
 			<xf:bind id="timeFromVaccinationToSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/time_from_vaccination_to_signs_of_ecf" type="string"/>	
 			<xf:bind id="ageOfCattleShowingSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/age_of_cattle_showing_signs_of_ecf" type="string"/>
 			<xf:bind id="descECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/desc_ecf_symptoms" type="string"/>				
+				
+
+			
+			<xf:bind id="deathsHaveOccuredSinceECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/deaths_have_occured_since_ecf_vaccination" type="boolean"/>
+			<xf:bind id="noOfDeathsOccuredSinceECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/no_deaths_since_ecf_vaccination" type="integer"/>	
+			<xf:bind id="timesFromECFVaccinationToDeath" nodeset="/farm/ecf_infection_treatment_vaccination/times_from_ecf_vaccination_to_death" type="string"/>
+			<xf:bind id="agesOfECFDeathsSinceVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/ages_Of_ecf_deaths_since_vaccination" type="string"/>		
+			<xf:bind id="incentedToECFVaccinate" nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate" type="string"/>
+			<xf:bind id="reasonsToNotECFVaccinate" nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate" type="string"/>
+			<xf:bind id="ratingOfECFVaccinationEffect" nodeset="/farm/ecf_infection_treatment_vaccination/rating_of_ecf_vaccination_effect" type="integer"/>
+			<xf:bind id="recievedECFVaccinationInfo" nodeset="/farm/ecf_infection_treatment_vaccination/recieved_ecf_vaccination_info" type="boolean"/>			
+			
+				
+				
 						
 		</xf:model>
 	</head>
@@ -1015,9 +1035,85 @@
 				</xf:input>
 	
 
-
-
-
+				<xf:input bind="deathsHaveOccuredSinceECFVaccination">
+					<xf:label>Have any of your cattle died since the vaccination?:</xf:label>
+				</xf:input>
+				
+				<xf:input bind="noOfDeathsOccuredSinceECFVaccination">
+					<xf:label>Number of deaths which have occurred since ECF vaccination?:</xf:label>
+				</xf:input>
+				
+				<xf:input bind="timesFromECFVaccinationToDeath">
+					<xf:label>Time from vaccination to death? (comma seperated):</xf:label>
+				</xf:input>
+				
+				<xf:input bind="agesOfECFDeathsSinceVaccination">
+					<xf:label>Age of cattle that died? (comma seperated):</xf:label>
+				</xf:input>
+				
+				<xf:select bind="incentedToECFVaccinate">
+					<xf:label>When did you choose to vaccinate against East Coast Fever?:</xf:label>
+					<xf:item>
+						<xf:label>As soon as the vaccine was available</xf:label>
+						<xf:value>when_vaccine_available</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Advice from the vet</xf:label>
+						<xf:value>upon_vet_advice</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Advice from a relative</xf:label>
+						<xf:value>upon_relative_advice</xf:value>
+					</xf:item>	
+					<xf:item>
+						<xf:label>Vaccinated cattle sell for more at market</xf:label>
+						<xf:value>cattle_market_price</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>After seeing vaccinated animals doing well</xf:label>
+						<xf:value>experience_of_other_animals</xf:value>
+					</xf:item>										
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>
+				</xf:select>
+				
+				<xf:select bind="reasonsToNotECFVaccinate">
+					<xf:label>Why do you not vaccinate against East Coast Fever?:</xf:label>
+					<xf:item>
+						<xf:label>Too expensive</xf:label>
+						<xf:value>too_expensive</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Not available in this area</xf:label>
+						<xf:value>unavailable_in_area</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Do not have calves of immunising age</xf:label>
+						<xf:value>calves_not_old_enough</xf:value>
+					</xf:item>	
+					<xf:item>
+						<xf:label>Cows get ECF from vaccination</xf:label>
+						<xf:value>cows_get_ecf_upon_vaccination</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>It doesn't work</xf:label>
+						<xf:value>does_not_work</xf:value>
+					</xf:item>										
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>
+				</xf:select>				
+				
+				<xf:input bind="ratingOfECFVaccinationEffect">
+					<xf:label>On a scale of 1-10 how effective do you think ECF vaccination at preventing ECF?:</xf:label>
+				</xf:input>
+				
+				<xf:input bind="recievedECFVaccinationInfo">
+					<xf:label>Do you receive any education leaflets or information about East Coast fever?:</xf:label>
+				</xf:input>				
 
 			</xf:group>					
 			
