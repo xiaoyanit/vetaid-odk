@@ -68,7 +68,20 @@
 						<familiar_with_ecf/>	
 						<associated_ecf_symptoms/>
 						<approach_to_ecf_treatment/>
-						<aware_of_ecf_vaccination/>
+						<aware_ecf_vaccination/>				
+						<cattle_are_vaccinated_against_ecf/>
+						<date_ecf_vaccination1/>
+						<date_ecf_vaccination2/>
+						<no_cattle_vaccinated/>				
+						<age_cattle_vaccinated/>
+						
+						<age_of_cattle_vaccinated/>
+						<cattle_showing_signs_since_ecf_vaccination/>
+						<time_from_vaccination_to_signs_of_ecf/>	
+						<age_of_cattle_showing_signs_of_ecf/>
+						<desc_ecf_symptoms/>						
+						
+										
 					</ecf_infection_treatment_vaccination>										
   				</farm>				
 		
@@ -139,9 +152,19 @@
 			<xf:bind id="familiarWithEastCoastFever" nodeset="/farm/ecf_infection_treatment_vaccination/familiar_with_ecf" type="boolean"/>
 			<xf:bind id="associatedECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms" type="string"/>						
 			<xf:bind id="approachToECFTreatment" nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment" type="string"/>
-			<xf:bind id="awareOfECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/aware_of_ecf_vaccination" type="boolean"/>
+			<xf:bind id="awareOfECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/aware_ecf_vaccination" type="boolean"/>
 			
-
+			<xf:bind id="cattleAreVaccinatedAgainstECF" nodeset="/farm/ecf_infection_treatment_vaccination/cattle_are_vaccinated_against_ecf" type="boolean"/>
+			<xf:bind id="dateOfECFVaccination1" nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination1" type="date"/>						
+			<xf:bind id="dateOfECFVaccination2" nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination2" type="date"/>
+			<xf:bind id="noOfCattleVaccinated" nodeset="/farm/ecf_infection_treatment_vaccination/no_cattle_vaccinated" type="integer"/>
+			<xf:bind id="ageOfCattleVaccinated" nodeset="/farm/ecf_infection_treatment_vaccination/age_cattle_vaccinated" type="integer"/>
+						
+			<xf:bind id="NoOfCattleShowingSignsOfECFSinceVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/cattle_showing_signs_since_ecf_vaccination" type="integer"/>
+			<xf:bind id="timeFromVaccinationToSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/time_from_vaccination_to_signs_of_ecf" type="string"/>	
+			<xf:bind id="ageOfCattleShowingSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/age_of_cattle_showing_signs_of_ecf" type="string"/>
+			<xf:bind id="descECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/desc_ecf_symptoms" type="string"/>				
+						
 		</xf:model>
 	</head>
 	
@@ -955,8 +978,47 @@
 					<xf:label>Are you aware that there is a cattle vaccination against East Coast Fever?:</xf:label>
 				</xf:input>		
 
+				<xf:input bind="cattleAreVaccinatedAgainstECF">
+					<xf:label>Are your cattle vaccinated against East Coast Fever?:</xf:label>
+				</xf:input>
+
+				<xf:input bind="dateOfECFVaccination1">
+					<xf:label>Date your cattle were last vaccinated against ECF?:</xf:label>
+				</xf:input>
+
+				<xf:input bind="dateOfECFVaccination2">
+					<xf:label>Previous date your cattle were last vaccinated against ECF?:</xf:label>
+				</xf:input>
 		
-		
+				<xf:input bind="noOfCattleVaccinated">
+					<xf:label>No. of cattle vaccinated against ECF?:</xf:label>
+				</xf:input>				
+
+				<xf:input bind="ageOfCattleVaccinated">
+					<xf:label>Age of cattle vaccinated?:</xf:label>
+				</xf:input>				
+
+				<xf:input bind="NoOfCattleShowingSignsOfECFSinceVaccination">
+					<xf:label>How many of your cattle have shown signs of East Coast Fever since vaccination?:</xf:label>
+				</xf:input>
+
+				<xf:input bind="timeFromVaccinationToSignsOfECF">
+						<xf:label>How long after ECF vaccination before cattle showed signs of ECF?:</xf:label>
+				</xf:input>
+				
+				<xf:input bind="ageOfCattleShowingSignsOfECF">
+					<xf:label>Age of Cattle showing ECF?:</xf:label>
+				</xf:input>
+
+				<xf:input bind="descECFSymptoms">
+					<xf:label>Age of Cattle showing ECF?:</xf:label>
+				</xf:input>
+	
+
+
+
+
+
 			</xf:group>					
 			
 			
