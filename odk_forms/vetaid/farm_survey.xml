@@ -51,6 +51,15 @@
 						<deaths_aged_four_to_twelve_months/>
 						<deaths_aged_more_than_twelve_months/>
 						<top_rated_desired_improvements/>
+						
+						<purpose_of_cattle_with_higher_survival_rate/>
+						<sell_cattle_to_whom/>
+						<associates_ticks_with_disease_in_cattle/>
+						<disease_associated_with_ticks1/>
+						<disease_associated_with_ticks2/>
+						<disease_associated_with_ticks3/>
+						
+						
 					</cattle_health_management>
   				</farm>				
 				
@@ -101,6 +110,17 @@
 			<xf:bind id="deathsAgedFourToTwelveMonths" nodeset="/farm/cattle_health_management/deaths_aged_four_to_twelve_months" required="true()" type="integer"/>
 			<xf:bind id="deathsAgedMoreThan12Months" nodeset="/farm/cattle_health_management/deaths_aged_more_than_twelve_months" required="true()" type="integer"/>
 			<xf:bind id="topRatedDesiredImprovements" nodeset="/farm/cattle_health_management/top_rated_desired_improvements" type="string"/>						
+			
+
+			<xf:bind id="purposeWithHigherSurvivalRate" nodeset="/farm/cattle_health_management/purpose_of_cattle_with_higher_survival_rate" type="string"/>
+			<xf:bind id="sellToWhom" nodeset="/farm/cattle_health_management/sell_cattle_to_whom" type="string"/>
+			<xf:bind id="associatesTicksWithDiseaseInCattle" nodeset="/farm/cattle_health_management/associates_ticks_with_disease_in_cattle" type="boolean"/>
+			<xf:bind id="diseaseAssociatedWithTicks1" nodeset="/farm/cattle_health_management/disease_associated_with_ticks1" type="string"/>
+			<xf:bind id="diseaseAssociatedWithTicks2" nodeset="/farm/cattle_health_management/disease_associated_with_ticks2" type="string"/>
+			<xf:bind id="diseaseAssociatedWithTicks3" nodeset="/farm/cattle_health_management/disease_associated_with_ticks3" type="string"/>
+	
+			
+
 						
 						
 		</xf:model>
@@ -222,49 +242,24 @@
 						<xf:value>other</xf:value>
 					</xf:item>		
 				</xf:select>
+				
+				<xf:input bind="cattleMixing">
+					<xf:label>Do you mix Cattle with Cattle/Buffalo?:</xf:label>
+				</xf:input>
 			
-				<xf:select1 bind="cattleMixing">
-					<xf:label>Do you mix Cattle with Cattle/Buffalo?</xf:label>
-					<!-- Needs a BRANCH for yes -->		
-					<xf:item>
-						<xf:label>Yes</xf:label>
-						<xf:value>true</xf:value>
-					</xf:item>
-					<xf:item>
-						<xf:label>No</xf:label>
-						<xf:value>false</xf:value>
-					</xf:item>
-				</xf:select1>
-			
-				<xf:select1 bind="buffaloMixing">
-					<xf:label>Do you mix Buffalo with Cattle/Buffalo?</xf:label>
-					<!-- Needs a BRANCH for yes -->		
-					<xf:item>
-						<xf:label>Yes</xf:label>
-						<xf:value>true</xf:value>
-					</xf:item>
-					<xf:item>
-						<xf:label>No</xf:label>
-						<xf:value>false</xf:value>
-					</xf:item>
-				</xf:select1>						
+				<xf:input bind="buffaloMixing">
+					<xf:label>Do you mix Buffalo with Cattle/Buffalo?:</xf:label>
+				</xf:input>
 
 			
 			<xf:input bind="calvesBornThisYear">
 				<xf:label>How many calves were born in the last 12 months?</xf:label>
 			</xf:input>
 			
-			<xf:select1 bind="calvesAndAdultsGrazingTogether">
-				<xf:label>Do you graze your calves with adult cattle?</xf:label>
-				<xf:item>
-					<xf:label>Yes</xf:label>
-					<xf:value>true</xf:value>
-				</xf:item>
-				<xf:item>
-					<xf:label>No</xf:label>
-					<xf:value>false</xf:value>
-				</xf:item>				
-			</xf:select1>
+			<xf:input bind="calvesAndAdultsGrazingTogether">
+				<xf:label>Do you graze your calves with adult cattle?:</xf:label>
+			</xf:input>	
+				
 		</xf:group>
 			
 		<!-- Rank the purpose of cattle holding  as a series of 8 selections -->
@@ -737,9 +732,50 @@
 				</xf:select>
 				
 				
+				<xf:select bind="purposeWithHigherSurvivalRate">
+					<xf:label>If more of your cattle survived, what would you do with them?:</xf:label>
+					<xf:item>
+						<xf:label>Sell as calves</xf:label>
+						<xf:value>sell_as_calves</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Rear and keep</xf:label>
+						<xf:value>rear_and_keep</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>Rear and sell as adults</xf:label>
+						<xf:value>sell_as_adults</xf:value>
+					</xf:item>					
+					<xf:item>
+						<xf:label>Other</xf:label>
+						<xf:value>other</xf:value>
+					</xf:item>
+				</xf:select>
+				
+				<xf:input bind="sellToWhom">
+					<xf:label>Who would you sell your cattle to?:</xf:label>
+				</xf:input>				
+				
+				<xf:input bind="associatesTicksWithDiseaseInCattle">
+					<xf:label>Do you associate ticks with disease in your cattle?:</xf:label>
+				</xf:input>			
+				
+				<xf:group>
+			  		<xf:label>3 Diseases associated with ticks</xf:label>
+					<xf:input bind="diseaseAssociatedWithTicks1">
+						<xf:label>Most severe?:</xf:label>
+					</xf:input>
+					<xf:input bind="diseaseAssociatedWithTicks2">
+						<xf:label>Second most severe?:</xf:label>
+					</xf:input>
+					<xf:input bind="diseaseAssociatedWithTicks3">
+						<xf:label>Final?:</xf:label>
+					</xf:input>				
+				</xf:group>		
 								
 			</xf:group>		
 			
 		</xf:group>
 	</body>
 </xf:html>
+
