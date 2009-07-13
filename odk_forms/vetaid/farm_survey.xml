@@ -64,14 +64,14 @@
 						<dip_spray_frequency/>
 						<additional_tick_treatment/>
 					</cattle_health_management>
-					<ecf_infection_treatment_vaccination>					
-						<approach_to_eastcoast_fever_treatment/>
-						<familiar_with_eastcoast_fever/>
-						<aware_of_eastcoast_fever_vaccination/>
+					<ecf_infection_treatment_vaccination>		
+						<familiar_with_ecf/>	
+						<associated_ecf_symptoms/>
+						<approach_to_ecf_treatment/>
+						<aware_of_ecf_vaccination/>
 					</ecf_infection_treatment_vaccination>										
-					
   				</farm>				
-				
+		
 			</xf:instance>
 			
 			<!-- Farm Details add the required="true()" attr for those needed-->
@@ -136,9 +136,12 @@
 						
 						
 			<!-- ecf_infection_treatment_vaccination -->			
-			<xf:bind id="approachToEastCoastFeverTreatment" nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_eastcoast_fever_treatment" type="string"/>
-			<xf:bind id="familiarWithEastCoastFever" nodeset="/farm/ecf_infection_treatment_vaccination/familiar_with_eastcoast_fever" type="boolena"/>
-			<xf:bind id="awareOfEastCoastFeverVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/aware_of_eastcoast_fever_vaccination" type="boolean"/>
+			<xf:bind id="familiarWithEastCoastFever" nodeset="/farm/ecf_infection_treatment_vaccination/familiar_with_ecf" type="boolean"/>
+			<xf:bind id="associatedECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms" type="string"/>						
+			<xf:bind id="approachToECFTreatment" nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment" type="string"/>
+			<xf:bind id="awareOfECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/aware_of_ecf_vaccination" type="boolean"/>
+			
+
 		</xf:model>
 	</head>
 	
@@ -880,7 +883,7 @@
 					<xf:label>Have you heard of the disease East Coast Fever?:</xf:label>
 				</xf:input>		
 		
-				<xf:select bind="additionalTickTreatment">
+				<xf:select bind="associatedECFSymptoms">
 					<xf:label>Which of the following do you associate with ECF?:</xf:label>
 					<xf:item>
 						<xf:label>Coughing</xf:label>
@@ -928,7 +931,7 @@
 					</xf:item>																																		
 				</xf:select>				
 				
-				<xf:select bind="approachToEastCoastFeverTreatment">
+				<xf:select bind="approachToECFTreatment">
 					<xf:label>How do you treat cows with East Coast Fever?:</xf:label>
 					<xf:item>
 						<xf:label>Contact the vet for advice</xf:label>
@@ -947,13 +950,8 @@
 						<xf:value>other</xf:value>
 					</xf:item>
 				</xf:select>					
-	
 				
-				<xf:input bind="familiarWithEastCoastFever">
-					<xf:label>Have you heard of the disease East Coast Fever?:</xf:label>
-				</xf:input>	
-				
-				<xf:input bind="awareOfEastCoastFeverVaccination">
+				<xf:input bind="awareOfECFVaccination">
 					<xf:label>Are you aware that there is a cattle vaccination against East Coast Fever?:</xf:label>
 				</xf:input>		
 
