@@ -9,7 +9,7 @@
 		<xf:model id="farm">
 			<xf:instance id="mainInstance">
 				<animal>
-					<id/>
+					<animal_id/>
 					<farm_id/>
 					<sex/>
 					<breed/>
@@ -19,7 +19,7 @@
 					<diarrhea_character/>					
 					<temperature/>
 					<lymphadenopathy/>
-					<lymphadenopathyComment/>					
+					<lymphadenopathy_comment/>
 					<body_condition/>
 					<ticks_on_animal/>
 					<appetite_change/>
@@ -34,7 +34,7 @@
 			</xf:instance>
 			
 			<!-- Animal details -->
-			<xf:bind id="id" nodeset="/animal/id" type="string"/>
+			<xf:bind id="animalId" nodeset="/animal/animal_id" type="string"/>
 			<xf:bind id="farmId" nodeset="/animal/farm_id" type="string"/>
 			<xf:bind id="sex" nodeset="/animal/sex" type="string"/>
 			<xf:bind id="breed" nodeset="/animal/breed" type="string"/>
@@ -45,8 +45,8 @@
 			<xf:bind id="temperature" nodeset="/animal/temperature" type="string"/>
 			<xf:bind id="lymphadenopathy" nodeset="/animal/lymphadenopathy" type="string"/>
 			<xf:bind id="lymphadenopathyComment" nodeset="/animal/lymphadenopathyComment" type="string"/>		
-			<xf:bind id="bodyCondition" nodeset="/animal/body_condition" type="float"/>		
-			<xf:bind id="ticksOnAnimal" nodeset="/animal/ticks_on_animal" type="integer"/>
+			<xf:bind id="bodyCondition" nodeset="/animal/body_condition" type="string"/>		
+			<xf:bind id="ticksOnAnimal" nodeset="/animal/ticks_on_animal" type="string"/>
 			<xf:bind id="appetiteChange" nodeset="/animal/appetite_change" type="string"/>
 			<xf:bind id="mucusMembraneColour" nodeset="/animal/mucus_membrane_colour" type="string"/>
 			<xf:bind id="mucusMembraneColourComment" nodeset="/animal/mucus_membrane_colour_comment" type="string"/>		
@@ -54,17 +54,18 @@
 			<xf:bind id="nasalDischargeType" nodeset="/animal/nasal_discharge_type" type="string"/>		
 			<xf:bind id="nasalDischargeSeverity" nodeset="/animal/nasal_discharge_severity" type="string"/>
 			<xf:bind id="nasalDischargeCharacter" nodeset="/animal/nasal_discharge_character" type="string"/>					
-			<xf:bind id="respiratoryRate" nodeset="/animal/respiratory_rate" type="integer"/>			
+			<xf:bind id="respiratoryRate" nodeset="/animal/respiratory_rate" type="string"/>			
 			
 		</xf:model>
 	</head>
 	<body>
 		
-		<xf:input bind="farmId">
-			<xf:label>Farm ID:</xf:label>
-		</xf:input>
+		<input bind="farmId">
+			<label>ID of owning farm</label>
+			<hint>This is a unique ID for each farm in survey</hint>
+		</input>
 		
-		<xf:input bind="id">
+		<xf:input bind="animalId">
 			<xf:label>Animal Identification ID:</xf:label>
 		</xf:input>
 	
@@ -113,7 +114,7 @@
 		</xf:select>		
 		
 		<xf:input bind="breedOther">
-			<xf:label>Other known / unknown Breed:</xf:label>
+			<xf:label>Other known / unknown Breed (comma separated):</xf:label>
 		</xf:input>
 		
 		<xf:select bind="age">
@@ -344,7 +345,7 @@
 			</xf:item>										
 		</xf:select>
 
-		<xf:select bind="mucusMembraneColourmucusMembraneColour">
+		<xf:select bind="mucusMembraneColour">
 			<xf:label>Mucus membrane colour?</xf:label>
 			<xf:item>
 				<xf:label>white</xf:label>

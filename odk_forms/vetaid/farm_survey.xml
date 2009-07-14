@@ -9,6 +9,9 @@
 	<xf:model id="farm">
 			<xf:instance id="mainInstance">
 				<farm>
+					<farm_id/>
+					<location/>
+					<locationDetails/>					
 					<enterprise/>
 					<livestock>
 						<totals>
@@ -65,7 +68,9 @@
 						<disease_associated_with_ticks3/>			
 						<dip_or_spray_is_used/>
 						<dip_spray_products_used/>
+						<dip_spray_products_used_other/>						
 						<dip_spray_frequency/>
+						<dip_spray_frequency_other/>						
 						<additional_tick_treatment/>
 					</cattle_health_management>
 					<ecf_infection_treatment_vaccination>		
@@ -101,6 +106,9 @@
 			</xf:instance>
 			
 			<!-- Farm Details add the required="true()" attr for those needed-->
+			<xf:bind id="farmId" nodeset="/farm/farm_id" type="string"/>		
+			<xf:bind id="locationGeoPoint" nodeset="/farm/location" type="geopoint"/>	
+			<xf:bind id="locationDetails" nodeset="/farm/locationDetails" type="String"/>	
 			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
 			<xf:bind id="noOfCattle" nodeset="/farm/livestock/totals/cattle" type="integer"/>
 			<xf:bind id="noOfGoats" nodeset="/farm/livestock/totals/goats" type="integer"/>	
@@ -131,13 +139,13 @@
 			<xf:bind id="sickAnimalCarer" nodeset="/farm/cattle_health_management/sick_animal_carer" type="string"/>
 			<xf:bind id="namesOfDiseasesAffectingCattle" nodeset="/farm/cattle_health_management/diseases_affecting_cattle" type="string"/>
 			<xf:bind id="numberOfAnimalsAffectedInYear" nodeset="/farm/cattle_health_management/animals_affected_in_year" type="string"/>
-			<xf:bind id="numberOfDeathsInYear" nodeset="/farm/cattle_health_management/deaths_in_year" type="string"/>
 			<xf:bind id="treatmentsUsed" nodeset="/farm/cattle_health_management/treatments_used" type="string"/>
 			<xf:bind id="sourceOfAdviceRecieved" nodeset="/farm/cattle_health_management/source_of_advice_recieved" type="string"/>																														
 			<xf:bind id="sourceOfAdviceRecievedOther" nodeset="/farm/cattle_health_management/source_of_advice_recieved_other" type="string"/>
 			<xf:bind id="whenWillSeekAssistance" nodeset="/farm/cattle_health_management/when_will_seek_assistance" type="string"/>
 			<xf:bind id="whenWillSeekAssistanceOther" nodeset="/farm/cattle_health_management/when_will_seek_assistance_other" type="string"/>			
 			<xf:bind id="whereWillSeekAssistance" nodeset="/farm/cattle_health_management/where_will_seek_assistance" type="string"/>		
+			<xf:bind id="numberOfDeathsInYear" nodeset="/farm/cattle_health_management/deaths_in_year" type="string"/>			
 			<xf:bind id="deathsAgedZeroToOneMonth" nodeset="/farm/cattle_health_management/deaths_aged_zero_to_one_month" type="integer"/>
 			<xf:bind id="deathsAgedOneToFourMonths" nodeset="/farm/cattle_health_management/deaths_aged_one_to_four_months" type="integer"/>
 			<xf:bind id="deathsAgedFourToTwelveMonths" nodeset="/farm/cattle_health_management/deaths_aged_four_to_twelve_months" type="integer"/>
@@ -153,7 +161,9 @@
 			<xf:bind id="diseaseAssociatedWithTicks3" nodeset="/farm/cattle_health_management/disease_associated_with_ticks3" type="string"/>		
 			<xf:bind id="dipOrSprayIsUsed" nodeset="/farm/cattle_health_management/dip_or_spray_is_used" type="string"/>
 			<xf:bind id="dipSprayProductsUsed" nodeset="/farm/cattle_health_management/dip_spray_products_used" type="string"/>
+			<xf:bind id="dipSprayProductsUsedOther" nodeset="/farm/cattle_health_management/dip_spray_products_used_other" type="string"/>			
 			<xf:bind id="dipSprayFrequency" nodeset="/farm/cattle_health_management/dip_spray_frequency" type="string"/>
+			<xf:bind id="dipSprayFrequencyOther" nodeset="/farm/cattle_health_management/dip_spray_frequency_other" type="string"/>			
 			<xf:bind id="additionalTickTreatment" nodeset="/farm/cattle_health_management/additional_tick_treatment" type="string"/>
 						
 						
@@ -190,6 +200,21 @@
 	<body>
 	  	<!-- Farm -->
 		<xf:group>
+			<input bind="farmId">
+				<label>ID of farm survey is taking place</label>
+				<hint>This is a unique ID for each farm in survey</hint>
+			</input>
+			
+			<xf:input bind="locationGeoPoint">
+				<xf:label>Location of Farm:</xf:label>
+				<hint>Press to detect position</hint>				
+			</xf:input>
+			
+			<xf:input bind="locationDetails">
+				<label>Location / SubLocation Name</label>
+				<hint>If GPS is not working, please give more detailed info</hint>
+			</xf:input>
+			
 	  		<xf:label>Farm Details</xf:label>
 			<xf:select1 bind="enterprise">
 				<label>What is your main enterprise?</label>
@@ -240,7 +265,6 @@
 						<xf:label>Exotic (bos taurus)</xf:label>
 						<xf:value>exotic</xf:value>
 					</xf:item>
-					<!-- Needs a BRANCH for other -->		
 					<xf:item>
 						<xf:label>Other</xf:label>
 						<xf:value>other</xf:value>
@@ -248,7 +272,7 @@
 				</xf:select>
 				
 				<xf:input bind="cattleTypeOther">
-					<xf:label>Other Type of cattle:</xf:label>
+					<xf:label>Any 'Other' type of cattle? (comma separated):</xf:label>
 				</xf:input>
 				
 			</xf:group>			
@@ -273,7 +297,6 @@
 						<xf:label>free_range</xf:label>
 						<xf:value>free_range</xf:value>
 					</xf:item>				
-					<!-- Needs a BRANCH for other -->		
 					<xf:item>
 						<xf:label>Other</xf:label>
 						<xf:value>other</xf:value>
@@ -281,7 +304,7 @@
 				</xf:select>
 
 				<xf:input bind="grazingTypeOther">
-					<xf:label>Other Type of main Grazing?:</xf:label>
+					<xf:label>'Other' types of main Grazing? (comma separated):</xf:label>
 				</xf:input>
 
 
@@ -314,7 +337,7 @@
 				</xf:select>
 				
 				<xf:input bind="herdingResponsibilityOther">
-					<xf:label>Other responsible for herding your cattle?:</xf:label>
+					<xf:label>'Other' responsible for herding your cattle? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:input bind="cattleMixing">
@@ -665,9 +688,6 @@
 				<xf:input bind="numberOfAnimalsAffectedInYear">
 					<xf:label>No of animals affected in last 12months:</xf:label>
 				</xf:input>
-				<xf:input bind="numberOfDeathsInYear">
-					<xf:label>No if animal deaths in past year:</xf:label>
-				</xf:input>	
 				<xf:input bind="treatmentsUsed">
 					<xf:label>Treatment: (names of drug used or traditional remedy):</xf:label>
 				</xf:input>
@@ -687,7 +707,7 @@
 						<xf:value>relative</xf:value>
 					</xf:item>
 					<xf:item>
-						<xf:label>Other Farmer</xf:label>
+						<xf:label>Hired Labour</xf:label>
 						<xf:value>hired_labour</xf:value>
 					</xf:item>
 					<xf:item>
@@ -697,7 +717,7 @@
 				</xf:select>
 
 				<xf:input bind="sourceOfAdviceRecievedOther">
-					<xf:label>Other Source of advice:</xf:label>
+					<xf:label>'Other' Sources of advice? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:select bind="whenWillSeekAssistance">
@@ -733,27 +753,30 @@
 				</xf:select>
 				
 				<xf:input bind="whenWillSeekAssistanceOther">
-					<xf:label>Other times you will source of advice:</xf:label>
+					<xf:label>'Other' times you would seek advice? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:input bind="whereWillSeekAssistance">
-					<xf:label>Where do you seek assistance?:</xf:label>
+					<xf:label>Where do you seek assistance? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:group>
-			  		<xf:label>Cattle deaths this year</xf:label>
+		  			<xf:label>Cattle deaths this year</xf:label>
+					<xf:input bind="numberOfDeathsInYear">
+						<xf:label>No of animal deaths in past year:</xf:label>
+					</xf:input>			
 			
 					<xf:input bind="deathsAgedZeroToOneMonth">
-						<xf:label>Aged 0-1 month?:</xf:label>
+						<xf:label>Deaths aged 0-1 month?:</xf:label>
 					</xf:input>
 					<xf:input bind="deathsAgedOneToFourMonths">
-						<xf:label>Aged 1-4 months?:</xf:label>
+						<xf:label>Deaths aged 1-4 months?:</xf:label>
 					</xf:input>
 					<xf:input bind="deathsAgedFourToTwelveMonths">
-						<xf:label>Aged 4-12 months?:</xf:label>
+						<xf:label>Deaths aged 4-12 months?:</xf:label>
 					</xf:input>
 					<xf:input bind="deathsAgedMoreThan12Months">
-						<xf:label>Aged 12months or older?:</xf:label>
+						<xf:label>Deaths aged 12months or older?:</xf:label>
 					</xf:input>
 				</xf:group>						
 				
@@ -786,7 +809,7 @@
 				</xf:select>
 
 				<xf:input bind="topRatedDesiredImprovementsOther">
-					<xf:label>Which other unlisted desired benefit?:</xf:label>
+					<xf:label>Which 'other' unlisted desired benefits? (comma separated):</xf:label>
 				</xf:input>
 
 				<xf:select bind="purposeWithHigherSurvivalRate">
@@ -810,11 +833,11 @@
 				</xf:select>
 				
 				<xf:input bind="purposeWithHigherSurvivalRateOther">
-					<xf:label>What other would you do with surviving cattle?:</xf:label>
+					<xf:label>What 'other' would you do with surviving cattle? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:input bind="sellToWhom">
-					<xf:label>Who would you sell your cattle to?:</xf:label>
+					<xf:label>Who would you sell your cattle to? (comma separated):</xf:label>
 				</xf:input>				
 				
 				<xf:input bind="associatesTicksWithDiseaseInCattle">
@@ -852,7 +875,7 @@
 				</xf:select>					
 
 				<xf:input bind="dipSprayProductsUsed">
-					<xf:label>Dip/Spray products used separated by comma:</xf:label>
+					<xf:label>Dip/Spray products used? (comma separated):</xf:label>
 				</xf:input>		
 							
 				<xf:select1 bind="dipSprayFrequency">
@@ -879,7 +902,9 @@
 					</xf:item>														
 				</xf:select1>							
 							
-							
+				<xf:input bind="dipSprayProductsUsedOther">
+					<xf:label>'Other' frequency of dip/spraying cattle? (comma separated):</xf:label>
+				</xf:input>							
 							
 				<xf:select bind="additionalTickTreatment">
 					<xf:label>Do you use any of the following to treat ticks in addition to dipping/spraying?:</xf:label>
@@ -974,7 +999,7 @@
 				</xf:select>				
 
 				<xf:input bind="associatedECFSymptomsOther">
-					<xf:label>Is there other which you associate with ECF?:</xf:label>
+					<xf:label>Is there 'other' which you associate with ECF? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:select bind="approachToECFTreatment">
@@ -998,7 +1023,7 @@
 				</xf:select>					
 				
 				<xf:input bind="approachToECFTreatmentOther">
-					<xf:label>Is there another way you would you approach ECF treatment:</xf:label>
+					<xf:label>'other' way you would you approach ECF treatment:</xf:label>
 				</xf:input>				
 				
 				<xf:input bind="awareOfECFVaccination">
@@ -1022,7 +1047,7 @@
 				</xf:input>				
 
 				<xf:input bind="ageOfCattleVaccinated">
-					<xf:label>Age of cattle vaccinated?:</xf:label>
+					<xf:label>Age of cattle vaccinated? (comma separated):</xf:label>
 				</xf:input>				
 
 				<xf:input bind="NoOfCattleShowingSignsOfECFSinceVaccination">
@@ -1038,7 +1063,7 @@
 				</xf:input>
 
 				<xf:input bind="descECFSymptoms">
-					<xf:label>Age of Cattle showing ECF?:</xf:label>
+					<xf:label>Symptoms they are displaying you associate ECF? (comma separated):</xf:label>
 				</xf:input>
 	
 
@@ -1051,11 +1076,11 @@
 				</xf:input>
 				
 				<xf:input bind="timesFromECFVaccinationToDeath">
-					<xf:label>Time from vaccination to death? (comma seperated):</xf:label>
+					<xf:label>Time from vaccination to death? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:input bind="agesOfECFDeathsSinceVaccination">
-					<xf:label>Age of cattle that died? (comma seperated):</xf:label>
+					<xf:label>Age of cattle that died? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:select bind="incentedToECFVaccinate">
@@ -1087,7 +1112,7 @@
 				</xf:select>
 
 				<xf:input bind="incentedToECFVaccinateOther">
-					<xf:label>Other time chosen to vaccinate against East Coast Fever?:</xf:label>
+					<xf:label>'Other' time chosen to vaccinate against East Coast Fever? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:select bind="reasonsToNotECFVaccinate">
@@ -1119,7 +1144,7 @@
 				</xf:select>
 								
 				<xf:input bind="reasonsToNotECFVaccinateOther">
-					<xf:label>Other reason you did not vaccinate against East Coast Fever?:</xf:label>
+					<xf:label>'Other' reason you did not vaccinate against East Coast Fever? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:input bind="ratingOfECFVaccinationEffect">
