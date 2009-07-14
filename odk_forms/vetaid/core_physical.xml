@@ -295,12 +295,12 @@
 				<xf:value>20_to_30</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>30 to 40</xf:label>
-				<xf:value>30 to 40</xf:value>
+				<xf:label>30_to_40</xf:label>
+				<xf:value>30_to_40</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>40 to 50</xf:label>
-				<xf:value>40 to 50</xf:value>
+				<xf:label>40_to_50</xf:label>
+				<xf:value>40_to_50</xf:value>
 			</xf:item>
 		</xf:select>
 
@@ -344,7 +344,7 @@
 			</xf:item>										
 		</xf:select>
 
-		<xf:select bind="mucusMembraneColour">
+		<xf:select bind="mucusMembraneColourmucusMembraneColour">
 			<xf:label>Mucus membrane colour?</xf:label>
 			<xf:item>
 				<xf:label>white</xf:label>
