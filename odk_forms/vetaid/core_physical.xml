@@ -38,7 +38,7 @@
 			<xf:bind id="farmId" nodeset="/animal/farm_id" type="string"/>
 			<xf:bind id="sex" nodeset="/animal/sex" type="string"/>
 			<xf:bind id="breed" nodeset="/animal/breed" type="string"/>
-			<xf:bind id="breedOther" nodeset="/animal/breed_other" type="string"/>		
+			<xf:bind id="breedOther" nodeset="/animal/breed_other" type="string" relevant="selected(../breed, 'other') or selected(../breed, 'other_known')" required="true()"/>		
 			<xf:bind id="age" nodeset="/animal/age" type="string"/>
 			<xf:bind id="diarrhea" nodeset="/animal/diarrhea" type="string"/>
 			<xf:bind id="diarrheaCharacter" nodeset="/animal/diarrhea_character" type="string"/>		
@@ -51,9 +51,9 @@
 			<xf:bind id="mucusMembraneColour" nodeset="/animal/mucus_membrane_colour" type="string"/>
 			<xf:bind id="mucusMembraneColourComment" nodeset="/animal/mucus_membrane_colour_comment" type="string"/>		
 			<xf:bind id="nasalDischarge" nodeset="/animal/nasal_discharge" type="boolean"/>
-			<xf:bind id="nasalDischargeType" nodeset="/animal/nasal_discharge_type" type="string"/>		
-			<xf:bind id="nasalDischargeSeverity" nodeset="/animal/nasal_discharge_severity" type="string"/>
-			<xf:bind id="nasalDischargeCharacter" nodeset="/animal/nasal_discharge_character" type="string"/>					
+			<xf:bind id="nasalDischargeType" nodeset="/animal/nasal_discharge_type" type="string"  relevant="selected(../nasal_discharge, 'true')" />		
+			<xf:bind id="nasalDischargeSeverity" nodeset="/animal/nasal_discharge_severity" type="string"  relevant="selected(../nasal_discharge, 'true')" />
+			<xf:bind id="nasalDischargeCharacter" nodeset="/animal/nasal_discharge_character" type="string"  relevant="selected(../nasal_discharge, 'true')" />					
 			<xf:bind id="respiratoryRate" nodeset="/animal/respiratory_rate" type="string"/>			
 			
 		</xf:model>
@@ -61,7 +61,7 @@
 	<body>
 		
 		<input bind="farmId">
-			<label>ID of owning farm</label>
+			<label>Farm ID</label>
 			<hint>This is a unique ID for each farm in survey</hint>
 		</input>
 		
@@ -377,13 +377,21 @@
 			<xf:label>Mucus Membrane Colour  Comment:</xf:label>
 		</xf:input>
 
-		<xf:input bind="nasalDischarge">
+		<xf:select1 bind="nasalDischarge">
 			<xf:label>Displays of Nasal discharge?:</xf:label>
-		</xf:input>	
+			<xf:item>
+				<xf:label>Yes</xf:label>
+				<xf:value>true</xf:value>
+			</xf:item>
+			<xf:item>
+				<xf:label>No</xf:label>
+				<xf:value>false</xf:value>
+			</xf:item>
+		</xf:select1>	
 		
 		
 		<xf:select bind="nasalDischargeType">
-			<xf:label>Type of nasal discharge (if yes)?</xf:label>
+			<xf:label>Type of nasal discharge?</xf:label>
 			<xf:item>
 				<xf:label>unilateral (left)</xf:label>
 				<xf:value>unilateral</xf:value>
@@ -399,7 +407,7 @@
 		</xf:select>		
 		
 		<xf:select bind="nasalDischargeSeverity">
-			<xf:label>Severity of nasal discharge (if yes)?:</xf:label>
+			<xf:label>Severity of nasal discharge?:</xf:label>
 			<xf:item>
 				<xf:label>mild</xf:label>
 				<xf:value>mild</xf:value>
@@ -415,11 +423,11 @@
 		</xf:select>		
 		
 		<xf:input bind="nasalDischargeCharacter">
-			<xf:label>Character of discharge (if yes)?:</xf:label>
+			<xf:label>Character of discharge ?:</xf:label>
 		</xf:input>
 			
 		<xf:select bind="respiratoryRate">
-			<xf:label>Severity of nasal discharge (if yes)?:</xf:label>
+			<xf:label>Respiratory Rate?:</xf:label>
 			<xf:item>
 				<xf:label>5</xf:label>
 				<xf:value>5</xf:value>

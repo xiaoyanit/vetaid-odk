@@ -147,7 +147,7 @@
 	<body>
 		
 		<input bind="farmId">
-			<label>ID of owning farm</label>
+			<label>Farm ID</label>
 			<hint>This is a unique ID for each farm in survey</hint>
 		</input>
 		
@@ -798,9 +798,17 @@
 			<xf:label>Mucus Membrane Colour  Comment:</xf:label>
 		</xf:input>
 
-		<xf:input bind="nasalDischarge">
-			<xf:label>Displays of Nasal discharge?:</xf:label>
-		</xf:input>	
+		<xf:select1 bind="nasalDischarge">
+			<xf:label>Any Nasal discharge?:</xf:label>
+			<xf:item>
+				<xf:label>Yes</xf:label>
+				<xf:value>true</xf:value>
+			</xf:item>
+			<xf:item>
+				<xf:label>No</xf:label>
+				<xf:value>false</xf:value>
+			</xf:item>
+		</xf:select1>	
 		
 		
 		<xf:select bind="nasalDischargeType">
@@ -900,7 +908,7 @@
 		</xf:select>				
 
 		<xf:select bind="mentation">
-			<xf:label>Cornea?:</xf:label>
+			<xf:label>Mentation?:</xf:label>
 			<xf:item>
 				<xf:label>normal</xf:label>
 				<xf:value>normal</xf:value>
@@ -924,7 +932,7 @@
 		</xf:select>
 		
 		<xf:select bind="skinTent">
-			<xf:label>Cornea?:</xf:label>
+			<xf:label>Skin Tent?:</xf:label>
 			<xf:item>
 				<xf:label>normal</xf:label>
 				<xf:value>normal</xf:value>
@@ -1304,7 +1312,7 @@
 		</xf:select>			
 		
 		<xf:select bind="skinTeatAbnormalities">
-			<xf:label>Jugular Pulse:</xf:label>
+			<xf:label>Skin/Teat Abnormalities:</xf:label>
 			<xf:item>
 				<xf:label>normal</xf:label>
 				<xf:value>normal</xf:value>

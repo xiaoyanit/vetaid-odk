@@ -106,93 +106,93 @@
 			</xf:instance>
 			
 			<!-- Farm Details add the required="true()" attr for those needed-->
-			<xf:bind id="farmId" nodeset="/farm/farm_id" type="string"/>		
-			<xf:bind id="locationGeoPoint" nodeset="/farm/location" type="geopoint"/>	
-			<xf:bind id="locationDetails" nodeset="/farm/locationDetails" type="String"/>	
-			<xf:bind id="enterprise" nodeset="/farm/enterprise" type="string"/>
-			<xf:bind id="noOfCattle" nodeset="/farm/livestock/totals/cattle" type="integer"/>
-			<xf:bind id="noOfGoats" nodeset="/farm/livestock/totals/goats" type="integer"/>	
-			<xf:bind id="noOfPigs" nodeset="/farm/livestock/totals/pigs" type="integer"/>	
-			<xf:bind id="noOfSheep" nodeset="/farm/livestock/totals/sheep" type="integer"/>				
-			<xf:bind id="noOfChickens" nodeset="/farm/livestock/totals/chickens" type="integer"/>
-			<xf:bind id="cattleType" nodeset="/farm/livestock/totals/cattle_type" type="string"/>	
-			<xf:bind id="cattleTypeOther" nodeset="/farm/livestock/totals/cattle_type_other" type="string"/>				
-			<xf:bind id="grazingType" nodeset="/farm/livestock/management/grazing_type" type="string"/>
-			<xf:bind id="grazingTypeOther" nodeset="/farm/livestock/management/grazing_type_other" type="string"/>			
-			<xf:bind id="herdingResponsibility" nodeset="/farm/livestock/management/herding_responsibility" type="string"/>	
-			<xf:bind id="herdingResponsibilityOther" nodeset="/farm/livestock/management/herding_responsibility_other" type="string"/>				
-			<xf:bind id="cattleMixing" nodeset="/farm/livestock/management/cattle_mixing" type="boolean"/>
-			<xf:bind id="buffaloMixing" nodeset="/farm/livestock/management/buffalo_mixing" type="boolean"/>
-			<xf:bind id="calvesBornThisYear" nodeset="/farm/livestock/management/calves_born_this_year" type="integer"/>
-			<xf:bind id="calvesAndAdultsGrazingTogether" nodeset="/farm/livestock/management/calves_and_adults_grazing_together" type="boolean"/>
-			<xf:bind id="cattlePurposeRanking1" nodeset="/farm/livestock/management/cattle_purpose_rank_1" type="string"/>
-			<xf:bind id="cattlePurposeRanking2" nodeset="/farm/livestock/management/cattle_purpose_rank_2" type="string"/>
-			<xf:bind id="cattlePurposeRanking3" nodeset="/farm/livestock/management/cattle_purpose_rank_3" type="string"/>
-			<xf:bind id="cattlePurposeRanking4" nodeset="/farm/livestock/management/cattle_purpose_rank_4" type="string"/>
-			<xf:bind id="cattlePurposeRanking5" nodeset="/farm/livestock/management/cattle_purpose_rank_5" type="string"/>
-			<xf:bind id="cattlePurposeRanking6" nodeset="/farm/livestock/management/cattle_purpose_rank_6" type="string"/>
-			<xf:bind id="cattlePurposeRanking7" nodeset="/farm/livestock/management/cattle_purpose_rank_7" type="string"/>
-			<xf:bind id="cattlePurposeRanking8" nodeset="/farm/livestock/management/cattle_purpose_rank_8" type="string"/>
+			<xf:bind id="farmId" 							nodeset="/farm/farm_id" 												type="string"/>		
+			<xf:bind id="locationGeoPoint" 					nodeset="/farm/location" 												type="geopoint"/>	
+			<xf:bind id="locationDetails" 					nodeset="/farm/locationDetails" 										type="String"/>	
+			<xf:bind id="enterprise" 						nodeset="/farm/enterprise" 												type="string"/>
+			<xf:bind id="noOfCattle" 						nodeset="/farm/livestock/totals/cattle" 								type="integer"/>
+			<xf:bind id="noOfGoats" 						nodeset="/farm/livestock/totals/goats" 									type="integer"/>	
+			<xf:bind id="noOfPigs" 							nodeset="/farm/livestock/totals/pigs"									type="integer"/>	
+			<xf:bind id="noOfSheep"							nodeset="/farm/livestock/totals/sheep" 									type="integer"/>				
+			<xf:bind id="noOfChickens" 						nodeset="/farm/livestock/totals/chickens" 								type="integer"/>
+			<xf:bind id="cattleType" 						nodeset="/farm/livestock/totals/cattle_type"							type="string"/>	
+			<xf:bind id="cattleTypeOther"					nodeset="/farm/livestock/totals/cattle_type_other" 						type="string"		relevant="selected(../cattle_type, 'other')"/>				
+			<xf:bind id="grazingType" 						nodeset="/farm/livestock/management/grazing_type" 						type="string"/>
+			<xf:bind id="grazingTypeOther" 					nodeset="/farm/livestock/management/grazing_type_other" 				type="string"		relevant="selected(../grazing_type, 'other')"/>			
+			<xf:bind id="herdingResponsibility" 			nodeset="/farm/livestock/management/herding_responsibility" 			type="string"/>	
+			<xf:bind id="herdingResponsibilityOther" 		nodeset="/farm/livestock/management/herding_responsibility_other" 		type="string"		relevant="selected(../herding_responsibility, 'other')"/>				
+			<xf:bind id="cattleMixing" 						nodeset="/farm/livestock/management/cattle_mixing" 						type="boolean"/>
+			<xf:bind id="buffaloMixing" 					nodeset="/farm/livestock/management/buffalo_mixing" 					type="boolean"/>
+			<xf:bind id="calvesBornThisYear" 				nodeset="/farm/livestock/management/calves_born_this_year" 				type="integer"/>
+			<xf:bind id="calvesAndAdultsGrazingTogether" 	nodeset="/farm/livestock/management/calves_and_adults_grazing_together" type="boolean"/>
+			<xf:bind id="cattlePurposeRanking1" 			nodeset="/farm/livestock/management/cattle_purpose_rank_1" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking2" 			nodeset="/farm/livestock/management/cattle_purpose_rank_2" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking3" 			nodeset="/farm/livestock/management/cattle_purpose_rank_3" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking4" 			nodeset="/farm/livestock/management/cattle_purpose_rank_4" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking5" 			nodeset="/farm/livestock/management/cattle_purpose_rank_5" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking6" 			nodeset="/farm/livestock/management/cattle_purpose_rank_6" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking7" 			nodeset="/farm/livestock/management/cattle_purpose_rank_7" 				type="string"/>
+			<xf:bind id="cattlePurposeRanking8" 			nodeset="/farm/livestock/management/cattle_purpose_rank_8" 				type="string"/>
 			
 			
 			<!-- Health care Management-->
-			<xf:bind id="sickAnimalCarer" nodeset="/farm/cattle_health_management/sick_animal_carer" type="string"/>
-			<xf:bind id="namesOfDiseasesAffectingCattle" nodeset="/farm/cattle_health_management/diseases_affecting_cattle" type="string"/>
-			<xf:bind id="numberOfAnimalsAffectedInYear" nodeset="/farm/cattle_health_management/animals_affected_in_year" type="string"/>
-			<xf:bind id="treatmentsUsed" nodeset="/farm/cattle_health_management/treatments_used" type="string"/>
-			<xf:bind id="sourceOfAdviceRecieved" nodeset="/farm/cattle_health_management/source_of_advice_recieved" type="string"/>																														
-			<xf:bind id="sourceOfAdviceRecievedOther" nodeset="/farm/cattle_health_management/source_of_advice_recieved_other" type="string"/>
-			<xf:bind id="whenWillSeekAssistance" nodeset="/farm/cattle_health_management/when_will_seek_assistance" type="string"/>
-			<xf:bind id="whenWillSeekAssistanceOther" nodeset="/farm/cattle_health_management/when_will_seek_assistance_other" type="string"/>			
-			<xf:bind id="whereWillSeekAssistance" nodeset="/farm/cattle_health_management/where_will_seek_assistance" type="string"/>		
-			<xf:bind id="numberOfDeathsInYear" nodeset="/farm/cattle_health_management/deaths_in_year" type="string"/>			
-			<xf:bind id="deathsAgedZeroToOneMonth" nodeset="/farm/cattle_health_management/deaths_aged_zero_to_one_month" type="integer"/>
-			<xf:bind id="deathsAgedOneToFourMonths" nodeset="/farm/cattle_health_management/deaths_aged_one_to_four_months" type="integer"/>
-			<xf:bind id="deathsAgedFourToTwelveMonths" nodeset="/farm/cattle_health_management/deaths_aged_four_to_twelve_months" type="integer"/>
-			<xf:bind id="deathsAgedMoreThan12Months" nodeset="/farm/cattle_health_management/deaths_aged_more_than_twelve_months" type="integer"/>
-			<xf:bind id="topRatedDesiredImprovements" nodeset="/farm/cattle_health_management/top_rated_desired_improvements" type="string"/>
-			<xf:bind id="topRatedDesiredImprovementsOther" nodeset="/farm/cattle_health_management/top_rated_desired_improvements_other" type="string"/>			
-			<xf:bind id="purposeWithHigherSurvivalRate" nodeset="/farm/cattle_health_management/purpose_of_cattle_with_higher_survival_rate" type="string"/>
-			<xf:bind id="purposeWithHigherSurvivalRateOther" nodeset="/farm/cattle_health_management/purpose_of_cattle_with_higher_survival_rate_other" type="string"/>			
-			<xf:bind id="sellToWhom" nodeset="/farm/cattle_health_management/sell_cattle_to_whom" type="string"/>
-			<xf:bind id="associatesTicksWithDiseaseInCattle" nodeset="/farm/cattle_health_management/associates_ticks_with_disease_in_cattle" type="boolean"/>
-			<xf:bind id="diseaseAssociatedWithTicks1" nodeset="/farm/cattle_health_management/disease_associated_with_ticks1" type="string"/>
-			<xf:bind id="diseaseAssociatedWithTicks2" nodeset="/farm/cattle_health_management/disease_associated_with_ticks2" type="string"/>
-			<xf:bind id="diseaseAssociatedWithTicks3" nodeset="/farm/cattle_health_management/disease_associated_with_ticks3" type="string"/>		
-			<xf:bind id="dipOrSprayIsUsed" nodeset="/farm/cattle_health_management/dip_or_spray_is_used" type="string"/>
-			<xf:bind id="dipSprayProductsUsed" nodeset="/farm/cattle_health_management/dip_spray_products_used" type="string"/>
-			<xf:bind id="dipSprayProductsUsedOther" nodeset="/farm/cattle_health_management/dip_spray_products_used_other" type="string"/>			
-			<xf:bind id="dipSprayFrequency" nodeset="/farm/cattle_health_management/dip_spray_frequency" type="string"/>
-			<xf:bind id="dipSprayFrequencyOther" nodeset="/farm/cattle_health_management/dip_spray_frequency_other" type="string"/>			
-			<xf:bind id="additionalTickTreatment" nodeset="/farm/cattle_health_management/additional_tick_treatment" type="string"/>
+			<xf:bind id="sickAnimalCarer" 						nodeset="/farm/cattle_health_management/sick_animal_carer" 									type="string"/>
+			<xf:bind id="namesOfDiseasesAffectingCattle" 		nodeset="/farm/cattle_health_management/diseases_affecting_cattle" 							type="string"/>
+			<xf:bind id="numberOfAnimalsAffectedInYear" 		nodeset="/farm/cattle_health_management/animals_affected_in_year" 							type="string"/>
+			<xf:bind id="treatmentsUsed" 						nodeset="/farm/cattle_health_management/treatments_used" 									type="string"/>
+			<xf:bind id="sourceOfAdviceRecieved" 				nodeset="/farm/cattle_health_management/source_of_advice_recieved" 							type="string"/>																														
+			<xf:bind id="sourceOfAdviceRecievedOther" 			nodeset="/farm/cattle_health_management/source_of_advice_recieved_other" 					type="string" 		relevant="selected(../source_of_advice_recieved, 'other')"/>
+			<xf:bind id="whenWillSeekAssistance" 				nodeset="/farm/cattle_health_management/when_will_seek_assistance" 							type="string"/>
+			<xf:bind id="whenWillSeekAssistanceOther" 			nodeset="/farm/cattle_health_management/when_will_seek_assistance_other" 					type="string"		relevant="selected(../when_will_seek_assistance, 'other')"/>			
+			<xf:bind id="whereWillSeekAssistance" 				nodeset="/farm/cattle_health_management/where_will_seek_assistance" 						type="string"/>		
+			<xf:bind id="numberOfDeathsInYear" 					nodeset="/farm/cattle_health_management/deaths_in_year" 									type="integer"/>			
+			<xf:bind id="deathsAgedZeroToOneMonth" 				nodeset="/farm/cattle_health_management/deaths_aged_zero_to_one_month" 						type="integer"		relevant="../deaths_in_year > 0"/>
+			<xf:bind id="deathsAgedOneToFourMonths" 			nodeset="/farm/cattle_health_management/deaths_aged_one_to_four_months" 					type="integer"		relevant="../deaths_in_year > 0"/>
+			<xf:bind id="deathsAgedFourToTwelveMonths" 			nodeset="/farm/cattle_health_management/deaths_aged_four_to_twelve_months" 					type="integer"		relevant="../deaths_in_year > 0"/>
+			<xf:bind id="deathsAgedMoreThan12Months" 			nodeset="/farm/cattle_health_management/deaths_aged_more_than_twelve_months" 				type="integer"		relevant="../deaths_in_year > 0"/>
+			<xf:bind id="topRatedDesiredImprovements" 			nodeset="/farm/cattle_health_management/top_rated_desired_improvements" 					type="string"/>
+			<xf:bind id="topRatedDesiredImprovementsOther" 		nodeset="/farm/cattle_health_management/top_rated_desired_improvements_other" 				type="string" 		relevant="selected(../top_rated_desired_improvements, 'other')"/>			
+			<xf:bind id="purposeWithHigherSurvivalRate" 		nodeset="/farm/cattle_health_management/purpose_of_cattle_with_higher_survival_rate" 		type="string"/>
+			<xf:bind id="purposeWithHigherSurvivalRateOther" 	nodeset="/farm/cattle_health_management/purpose_of_cattle_with_higher_survival_rate_other" 	type="string"		relevant="selected(../purpose_of_cattle_with_higher_survival_rate, 'other')"/>			
+			<xf:bind id="sellToWhom" 							nodeset="/farm/cattle_health_management/sell_cattle_to_whom" 								type="string"/>
+			<xf:bind id="associatesTicksWithDiseaseInCattle" 	nodeset="/farm/cattle_health_management/associates_ticks_with_disease_in_cattle" 			type="boolean"/>
+			<xf:bind id="diseaseAssociatedWithTicks1" 			nodeset="/farm/cattle_health_management/disease_associated_with_ticks1" 					type="string"		relevant="selected(../associates_ticks_with_disease_in_cattle, 'true')"/>
+			<xf:bind id="diseaseAssociatedWithTicks2" 			nodeset="/farm/cattle_health_management/disease_associated_with_ticks2" 					type="string"		relevant="selected(../associates_ticks_with_disease_in_cattle, 'true')"/>
+			<xf:bind id="diseaseAssociatedWithTicks3" 			nodeset="/farm/cattle_health_management/disease_associated_with_ticks3" 					type="string"		relevant="selected(../associates_ticks_with_disease_in_cattle, 'true')"/>		
+			<xf:bind id="dipOrSprayIsUsed" 						nodeset="/farm/cattle_health_management/dip_or_spray_is_used" 								type="string"/>
+			<xf:bind id="dipSprayProductsUsed" 					nodeset="/farm/cattle_health_management/dip_spray_products_used" 							type="string"		relevant="selected(../dip_or_spray_is_used, 'dip') or selected(../dip_or_spray_is_used, 'spray')"/>
+			<xf:bind id="dipSprayProductsUsedOther" 			nodeset="/farm/cattle_health_management/dip_spray_products_used_other" 						type="string"		relevant="selected(../dip_spray_products_used, 'other')"/>			
+			<xf:bind id="dipSprayFrequency" 					nodeset="/farm/cattle_health_management/dip_spray_frequency" 								type="string"		relevant="selected(../dip_or_spray_is_used, 'dip') or selected(../dip_or_spray_is_used, 'spray')"/>
+			<xf:bind id="dipSprayFrequencyOther" 				nodeset="/farm/cattle_health_management/dip_spray_frequency_other" 							type="string"		relevant="selected(../dip_spray_frequency, 'other')"/>			
+			<xf:bind id="additionalTickTreatment" 				nodeset="/farm/cattle_health_management/additional_tick_treatment" 							type="string"/>
 						
 						
 			<!-- ecf_infection_treatment_vaccination -->			
-			<xf:bind id="familiarWithEastCoastFever" nodeset="/farm/ecf_infection_treatment_vaccination/familiar_with_ecf" type="boolean"/>
-			<xf:bind id="associatedECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms" type="string"/>
-			<xf:bind id="associatedECFSymptomsOther" nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms_other" type="string"/>									
-			<xf:bind id="approachToECFTreatment" nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment" type="string"/>
-			<xf:bind id="approachToECFTreatmentOther" nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment_other" type="string"/>			
-			<xf:bind id="awareOfECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/aware_ecf_vaccination" type="boolean"/>			
-			<xf:bind id="cattleAreVaccinatedAgainstECF" nodeset="/farm/ecf_infection_treatment_vaccination/cattle_are_vaccinated_against_ecf" type="boolean"/>
-			<xf:bind id="dateOfECFVaccination1" nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination1" type="date"/>						
-			<xf:bind id="dateOfECFVaccination2" nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination2" type="date"/>
-			<xf:bind id="noOfCattleVaccinated" nodeset="/farm/ecf_infection_treatment_vaccination/no_cattle_vaccinated" type="integer"/>
-			<xf:bind id="ageOfCattleVaccinated" nodeset="/farm/ecf_infection_treatment_vaccination/age_cattle_vaccinated" type="integer"/>						
-			<xf:bind id="NoOfCattleShowingSignsOfECFSinceVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/cattle_showing_signs_since_ecf_vaccination" type="integer"/>
-			<xf:bind id="timeFromVaccinationToSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/time_from_vaccination_to_signs_of_ecf" type="string"/>	
-			<xf:bind id="ageOfCattleShowingSignsOfECF" nodeset="/farm/ecf_infection_treatment_vaccination/age_of_cattle_showing_signs_of_ecf" type="string"/>
-			<xf:bind id="descECFSymptoms" nodeset="/farm/ecf_infection_treatment_vaccination/desc_ecf_symptoms" type="string"/>								
-			<xf:bind id="deathsHaveOccuredSinceECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/deaths_have_occured_since_ecf_vaccination" type="boolean"/>
-			<xf:bind id="noOfDeathsOccuredSinceECFVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/no_deaths_since_ecf_vaccination" type="integer"/>	
-			<xf:bind id="timesFromECFVaccinationToDeath" nodeset="/farm/ecf_infection_treatment_vaccination/times_from_ecf_vaccination_to_death" type="string"/>
-			<xf:bind id="agesOfECFDeathsSinceVaccination" nodeset="/farm/ecf_infection_treatment_vaccination/ages_of_ecf_deaths_since_vaccination" type="string"/>		
-			<xf:bind id="incentedToECFVaccinate" nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate" type="string"/>
-			<xf:bind id="incentedToECFVaccinateOther" nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate_other" type="string"/>			
-			<xf:bind id="reasonsToNotECFVaccinate" nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate" type="string"/>
-			<xf:bind id="reasonsToNotECFVaccinateOther" nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate_other" type="string"/>			
-			<xf:bind id="ratingOfECFVaccinationEffect" nodeset="/farm/ecf_infection_treatment_vaccination/rating_of_ecf_vaccination_effect" type="integer"/>
-			<xf:bind id="recievedECFVaccinationInfo" nodeset="/farm/ecf_infection_treatment_vaccination/recieved_ecf_vaccination_info" type="boolean"/>			
+			<xf:bind id="familiarWithEastCoastFever" 					nodeset="/farm/ecf_infection_treatment_vaccination/familiar_with_ecf" 							type="boolean"/>
+			<xf:bind id="associatedECFSymptoms"							nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms" 					type="string"/>
+			<xf:bind id="associatedECFSymptomsOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/associated_ecf_symptoms_other"				type="string"		relevant="selected(../associated_ecf_symptoms, 'other')"/>									
+			<xf:bind id="approachToECFTreatment" 						nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment" 					type="string"/>
+			<xf:bind id="approachToECFTreatmentOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment_other" 			type="string"		relevant="selected(../approach_to_ecf_treatment, 'other')"/>			
+			<xf:bind id="awareOfECFVaccination" 						nodeset="/farm/ecf_infection_treatment_vaccination/aware_ecf_vaccination" 						type="boolean"/>			
+			<xf:bind id="cattleAreVaccinatedAgainstECF" 				nodeset="/farm/ecf_infection_treatment_vaccination/cattle_are_vaccinated_against_ecf" 			type="boolean"/>
+			<xf:bind id="dateOfECFVaccination1" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination1" 						type="date"			relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>						
+			<xf:bind id="dateOfECFVaccination2" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination2" 						type="date"			relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
+			<xf:bind id="noOfCattleVaccinated" 							nodeset="/farm/ecf_infection_treatment_vaccination/no_cattle_vaccinated" 						type="integer"		relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
+			<xf:bind id="ageOfCattleVaccinated" 						nodeset="/farm/ecf_infection_treatment_vaccination/age_cattle_vaccinated" 						type="integer"		relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>						
+			<xf:bind id="NoOfCattleShowingSignsOfECFSinceVaccination" 	nodeset="/farm/ecf_infection_treatment_vaccination/cattle_showing_signs_since_ecf_vaccination" 	type="integer"		relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
+			<xf:bind id="timeFromVaccinationToSignsOfECF" 				nodeset="/farm/ecf_infection_treatment_vaccination/time_from_vaccination_to_signs_of_ecf" 		type="string"		relevant="selected(../cattle_are_vaccinated_against_ecf, 'true')"/>	
+			<xf:bind id="ageOfCattleShowingSignsOfECF" 					nodeset="/farm/ecf_infection_treatment_vaccination/age_of_cattle_showing_signs_of_ecf" 			type="string"/>
+			<xf:bind id="descECFSymptoms" 								nodeset="/farm/ecf_infection_treatment_vaccination/desc_ecf_symptoms" 							type="string"/>								
+			<xf:bind id="deathsHaveOccuredSinceECFVaccination" 			nodeset="/farm/ecf_infection_treatment_vaccination/deaths_have_occured_since_ecf_vaccination" 	type="boolean"/>
+			<xf:bind id="noOfDeathsOccuredSinceECFVaccination" 			nodeset="/farm/ecf_infection_treatment_vaccination/no_deaths_since_ecf_vaccination" 			type="integer"		relevant="selected(../deaths_have_occured_since_ecf_vaccination, 'true')"/>	
+			<xf:bind id="timesFromECFVaccinationToDeath" 				nodeset="/farm/ecf_infection_treatment_vaccination/times_from_ecf_vaccination_to_death" 		type="string"/>
+			<xf:bind id="agesOfECFDeathsSinceVaccination" 				nodeset="/farm/ecf_infection_treatment_vaccination/ages_of_ecf_deaths_since_vaccination" 		type="string"/>		
+			<xf:bind id="incentedToECFVaccinate" 						nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate" 					type="string"/>
+			<xf:bind id="incentedToECFVaccinateOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate_other" 			type="string"/>			
+			<xf:bind id="reasonsToNotECFVaccinate" 						nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate" 				type="string"/>
+			<xf:bind id="reasonsToNotECFVaccinateOther" 				nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate_other" 			type="string"/>			
+			<xf:bind id="ratingOfECFVaccinationEffect" 					nodeset="/farm/ecf_infection_treatment_vaccination/rating_of_ecf_vaccination_effect"			type="integer"/>
+			<xf:bind id="recievedECFVaccinationInfo" 					nodeset="/farm/ecf_infection_treatment_vaccination/recieved_ecf_vaccination_info" 				type="boolean"/>			
 				
 		</xf:model>
 	</head>
@@ -201,7 +201,7 @@
 	  	<!-- Farm -->
 		<xf:group>
 			<input bind="farmId">
-				<label>ID of farm survey is taking place</label>
+				<label>Farm ID</label>
 				<hint>This is a unique ID for each farm in survey</hint>
 			</input>
 			
@@ -272,7 +272,7 @@
 				</xf:select>
 				
 				<xf:input bind="cattleTypeOther">
-					<xf:label>Any 'Other' type of cattle? (comma separated):</xf:label>
+					<xf:label>What 'Other' type of cattle? (comma separated):</xf:label>
 				</xf:input>
 				
 			</xf:group>			
@@ -761,7 +761,7 @@
 				</xf:input>
 				
 				<xf:group>
-		  			<xf:label>Cattle deaths this year</xf:label>
+		  			<xf:label>Please enter number of Cattle deaths this year:</xf:label>
 					<xf:input bind="numberOfDeathsInYear">
 						<xf:label>No of animal deaths in past year:</xf:label>
 					</xf:input>			
@@ -1026,13 +1026,29 @@
 					<xf:label>'other' way you would you approach ECF treatment:</xf:label>
 				</xf:input>				
 				
-				<xf:input bind="awareOfECFVaccination">
+				<xf:select1 bind="awareOfECFVaccination">
 					<xf:label>Are you aware that there is a cattle vaccination against East Coast Fever?:</xf:label>
-				</xf:input>		
+					<xf:item>
+						<xf:label>Yes</xf:label>
+						<xf:value>true</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>No</xf:label>
+						<xf:value>false</xf:value>
+					</xf:item>
+				</xf:select1>		
 
-				<xf:input bind="cattleAreVaccinatedAgainstECF">
+				<xf:select1 bind="cattleAreVaccinatedAgainstECF">
 					<xf:label>Are your cattle vaccinated against East Coast Fever?:</xf:label>
-				</xf:input>
+					<xf:item>
+						<xf:label>Yes</xf:label>
+						<xf:value>true</xf:value>
+					</xf:item>
+					<xf:item>
+						<xf:label>No</xf:label>
+						<xf:value>false</xf:value>
+					</xf:item>
+				</xf:select1>
 
 				<xf:input bind="dateOfECFVaccination1">
 					<xf:label>Date your cattle were last vaccinated against ECF?:</xf:label>

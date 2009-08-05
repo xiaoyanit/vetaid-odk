@@ -41,7 +41,7 @@
   </h:head>
   <h:body>
 		<input ref="farm_id">
-			<label>ID of farm concerning interview</label>
+			<label>Farm ID</label>
 			<hint>This is a unique ID for each farm in survey</hint>
 		</input>
 		<input ref="interviewer">
