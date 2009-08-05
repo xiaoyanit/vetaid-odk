@@ -44,7 +44,7 @@
 			<xf:bind id="diarrheaCharacter" nodeset="/animal/diarrhea_character" type="string"/>		
 			<xf:bind id="temperature" nodeset="/animal/temperature" type="string"/>
 			<xf:bind id="lymphadenopathy" nodeset="/animal/lymphadenopathy" type="string"/>
-			<xf:bind id="lymphadenopathyComment" nodeset="/animal/lymphadenopathyComment" type="string"/>		
+			<xf:bind id="lymphadenopathyComment" nodeset="/animal/lymphadenopathy_comment" type="string"/>		
 			<xf:bind id="bodyCondition" nodeset="/animal/body_condition" type="string"/>		
 			<xf:bind id="ticksOnAnimal" nodeset="/animal/ticks_on_animal" type="string"/>
 			<xf:bind id="appetiteChange" nodeset="/animal/appetite_change" type="string"/>

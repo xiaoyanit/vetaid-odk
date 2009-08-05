@@ -41,7 +41,7 @@
   </h:head>
   <h:body>
 		<input ref="farm_id">
-			<label>Id of farm concerning interview</label>
+			<label>ID of farm concerning interview</label>
 			<hint>This is a unique ID for each farm in survey</hint>
 		</input>
 		<input ref="interviewer">
@@ -49,43 +49,33 @@
 		</input>
 		<input ref="respondent">
 			<label>Name of respondent</label>
-			<hint>can be short or very long</hint>
 		</input>		
 		<input ref="respondent_gender">
 			<label>Gender of respondent</label>
-			<hint>can be short or very long</hint>
 		</input>
 		<input ref="respondent_relationship_to_household_head">
 			<label>Relationship of respondent to household head</label>
-			<hint>can be short or very long</hint>
 		</input>		
 		<input ref="date">
 			<label>Date of interview</label>
-			<hint>only future dates allowed</hint>
 		</input>
 		<input ref="village">
 			<label>Village Name</label>
-			<hint>only future dates allowed</hint>
 		</input>
 		<input ref="location">
 			<label>Location / SubLocation Name</label>
-			<hint>only future dates allowed</hint>
 		</input>
 		<input ref="geopoint">
 			<label>Please establish the current GPS co-ords</label>
-			<hint>This will get gps location</hint>
 		</input>
 		<input ref="household_head">
 			<label>Name of head of Household</label>
-			<hint>can be short or very long</hint>
 		</input>
 		<input ref="household_head_gender">
 			<label>Gender of head of Household</label>
-			<hint>can be short or very long</hint>
 		</input>
 		<input ref="edu_lvl">
 			<label>Education level and language proficiency</label>
-			<hint>can be short or very long</hint>
 		</input>		
   </h:body>
 </h:html>
