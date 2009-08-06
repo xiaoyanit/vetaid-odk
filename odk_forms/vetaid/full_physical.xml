@@ -61,7 +61,10 @@
 					<skin_teat_abnormalities_location/>
 					<relevant_prv_medical_history/>
 					<abnormalities_comment/>
-		  		</animal>				
+		  		</animal>
+				<vetaid_metadata>
+					<schema_version>1</schema_version>					
+				</vetaid_metadata>				
 			</xf:instance>
 			
 			<!-- Animal details -->

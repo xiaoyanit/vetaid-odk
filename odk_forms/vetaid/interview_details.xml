@@ -22,20 +22,23 @@
 				<respondent_gender/>
 				<respondent_relationship_to_household_head/>				
 			</interview>
+			<vetaid_metadata>
+				<schema_version>1</schema_version>					
+			</vetaid_metadata>
 		</instance>
 	 
-		<bind nodeset="/interview/interviewer" type="string"/>
-		<bind nodeset="/interview/farm_id" type="string"/>
-		<bind nodeset="/interview/date" type="date" jr:preload="date" jr:preloadParams="today"/>
-		<bind nodeset="/interview/village" type="string"/>
-		<bind nodeset="/interview/location" type="string"/>		
-		<bind nodeset="/interview/geopoint" type="geopoint"/>
-		<bind nodeset="/interview/household_head" type="string"/>
-		<bind nodeset="/interview/household_head_gender" type="string"/>				
-   		<bind nodeset="/interview/edu_lvl" type="string"/>
-   		<bind nodeset="/interview/respondent" type="string"/>
-   		<bind nodeset="/interview/respondent_gender" type="string"/>
-   		<bind nodeset="/interview/respondent_relationship_to_household_head" type="string"/>
+		<bind nodeset="/interview/interviewer" 											type="string"/>
+		<bind nodeset="/interview/farm_id" 												type="string"/>
+		<bind nodeset="/interview/date" 												type="date" jr:preload="date" jr:preloadParams="today"/>
+		<bind nodeset="/interview/village" 												type="string"/>
+		<bind nodeset="/interview/location" 											type="string"/>		
+		<bind nodeset="/interview/geopoint" 											type="geopoint"/>
+		<bind nodeset="/interview/household_head" 										type="string"/>
+		<bind nodeset="/interview/household_head_gender" 								type="string"/>				
+   		<bind nodeset="/interview/edu_lvl" 												type="string"/>
+   		<bind nodeset="/interview/respondent" 											type="string"/>
+   		<bind nodeset="/interview/respondent_gender" 									type="string"/>
+   		<bind nodeset="/interview/respondent_relationship_to_household_head" 			type="string"/>
 				
     </model>
   </h:head>

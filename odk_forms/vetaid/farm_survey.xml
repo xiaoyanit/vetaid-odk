@@ -101,8 +101,10 @@
 						<rating_of_ecf_vaccination_effect/>
 						<recieved_ecf_vaccination_info/>	
 					</ecf_infection_treatment_vaccination>										
-  				</farm>				
-		
+  				</farm>
+				<vetaid_metadata>
+					<schema_version>1</schema_version>					
+				</vetaid_metadata>
 			</xf:instance>
 			
 			<!-- Farm Details add the required="true()" attr for those needed-->
@@ -175,8 +177,8 @@
 			<xf:bind id="approachToECFTreatmentOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/approach_to_ecf_treatment_other" 			type="string"		relevant="selected(../familiar_with_ecf, 'true') and selected(../approach_to_ecf_treatment, 'other')"/>			
 			<xf:bind id="awareOfECFVaccination" 						nodeset="/farm/ecf_infection_treatment_vaccination/aware_ecf_vaccination" 						type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>			
 			<xf:bind id="cattleAreVaccinatedAgainstECF" 				nodeset="/farm/ecf_infection_treatment_vaccination/cattle_are_vaccinated_against_ecf" 			type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>
-			<xf:bind id="dateOfECFVaccination1" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination1" 						type="date"			relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')"/>						
-			<xf:bind id="dateOfECFVaccination2" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination2" 						type="date"			relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
+			<xf:bind id="dateOfECFVaccination1" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination1" 						type="date"			relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')" jr:preload="date" jr:preloadParams="today"/>						
+			<xf:bind id="dateOfECFVaccination2" 						nodeset="/farm/ecf_infection_treatment_vaccination/date_ecf_vaccination2" 						type="date"			relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')" jr:preload="date" jr:preloadParams="today"/>
 			<xf:bind id="noOfCattleVaccinated" 							nodeset="/farm/ecf_infection_treatment_vaccination/no_cattle_vaccinated" 						type="integer"		relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
 			<xf:bind id="ageOfCattleVaccinated" 						nodeset="/farm/ecf_infection_treatment_vaccination/age_cattle_vaccinated" 						type="integer"		relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')"/>						
 			<xf:bind id="NoOfCattleShowingSignsOfECFSinceVaccination" 	nodeset="/farm/ecf_infection_treatment_vaccination/cattle_showing_signs_since_ecf_vaccination" 	type="integer"		relevant="selected(../familiar_with_ecf, 'true') and selected(../cattle_are_vaccinated_against_ecf, 'true')"/>
