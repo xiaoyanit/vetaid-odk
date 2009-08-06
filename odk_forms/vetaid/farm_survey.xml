@@ -235,25 +235,11 @@
 			<xf:group>
 		  		<xf:label>Livestock totals</xf:label>
 		
-				<xf:input bind="noOfCattle">
-					<xf:label>No of Cattle:</xf:label>
-				</xf:input>
-			
-				<xf:input bind="noOfGoats">
-					<xf:label>No of goats:</xf:label>
-				</xf:input>
-			
-				<xf:input bind="noOfPigs">
-					<xf:label>No of Pigs:</xf:label>
-				</xf:input>			
-			
-				<xf:input bind="noOfSheep">
-					<xf:label>No of Sheep:</xf:label>
-				</xf:input>			
-			
-				<xf:input bind="noOfChickens">
-					<xf:label>No of Chickens:</xf:label>
-				</xf:input>
+				<xf:input bind="noOfCattle"><xf:label>No of Cattle:</xf:label></xf:input>
+				<xf:input bind="noOfGoats"><xf:label>No of goats:</xf:label></xf:input>
+				<xf:input bind="noOfPigs"><xf:label>No of Pigs:</xf:label></xf:input>			
+				<xf:input bind="noOfSheep"><xf:label>No of Sheep:</xf:label></xf:input>			
+				<xf:input bind="noOfChickens"><xf:label>No of Chickens:</xf:label></xf:input>
 				
 				<xf:select bind="cattleType" >
 					<xf:label>What Type of cattle do you have?</xf:label>
@@ -340,46 +326,30 @@
 					<xf:label>'Other' responsible for herding your cattle? (comma separated):</xf:label>
 				</xf:input>
 				
-				<xf:input bind="cattleMixing">
+				<xf:select1 bind="cattleMixing">
 					<xf:label>Do you mix Cattle with Cattle/Buffalo?:</xf:label>
-					<xf:item>
-						<xf:label>Yes</xf:label>
-						<xf:value>true</xf:value>
-					</xf:item>					
-					<xf:item>
-						<xf:label>No</xf:label>
-						<xf:value>false</xf:value>
+					<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>
+					<xf:item><xf:label>No</xf:label><xf:value>false</xf:value>
 					</xf:item>
-				</xf:input>
+				</xf:select1>
 			
-				<xf:input bind="buffaloMixing">
+				<xf:select1 bind="buffaloMixing">
 					<xf:label>Do you mix Buffalo with Cattle/Buffalo?:</xf:label>
-					<xf:item>
-						<xf:label>Yes</xf:label>
-						<xf:value>true</xf:value>
+					<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>					
+					<xf:item><xf:label>No</xf:label><xf:value>false</xf:value>
 					</xf:item>					
-					<xf:item>
-						<xf:label>No</xf:label>
-						<xf:value>false</xf:value>
-					</xf:item>					
-				</xf:input>
+				</xf:select1>
 
 			
 			<xf:input bind="calvesBornThisYear">
 				<xf:label>How many calves were born in the last 12 months?</xf:label>
 			</xf:input>
 			
-			<xf:input bind="calvesAndAdultsGrazingTogether">
+			<xf:select1 bind="calvesAndAdultsGrazingTogether">
 				<xf:label>Do you graze your calves with adult cattle?:</xf:label>
-				<xf:item>
-					<xf:label>Yes</xf:label>
-					<xf:value>true</xf:value>
-				</xf:item>					
-				<xf:item>
-					<xf:label>No</xf:label>
-					<xf:value>false</xf:value>
-				</xf:item>
-			</xf:input>					
+				<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>					
+				<xf:item><xf:label>No</xf:label><xf:value>false</xf:value></xf:item>
+			</xf:select1>					
 		</xf:group>
 			
 		<!-- Rank the purpose of cattle holding  as a series of 8 selections -->
@@ -977,17 +947,11 @@
 			<xf:group>
 		  		<xf:label>ECF infection&amp;Treatment Vaccination</xf:label>
 		
-				<xf:input bind="familiarWithEastCoastFever">
+				<xf:select1 bind="familiarWithEastCoastFever">
 					<xf:label>Have you heard of the disease East Coast Fever?:</xf:label>
-					<xf:item>
-						<xf:label>Yes</xf:label>
-						<xf:value>true</xf:value>
-					</xf:item>
-					<xf:item>
-						<xf:label>No</xf:label>
-						<xf:value>false</xf:value>
-					</xf:item>
-				</xf:input>		
+					<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>
+					<xf:item><xf:label>No</xf:label><xf:value>false</xf:value></xf:item>
+				</xf:select1>		
 		
 				<xf:select bind="associatedECFSymptoms">
 					<xf:label>Which of the following do you associate with ECF?:</xf:label>
