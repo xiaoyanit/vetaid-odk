@@ -9,10 +9,13 @@
 	<xf:model id="farm">
 			<xf:instance id="mainInstance">
 				<farm>
+					<vetaid_metadata>
+						<schema_version>1</schema_version>					
+					</vetaid_metadata>
 					<farm_id/>
 					<location/>
 					<locationDetails/>					
-					<enterprise/>
+					<enterprise>livestock_farmer</enterprise>
 					<livestock>
 						<totals>
 							<cattle>0</cattle>
@@ -20,91 +23,87 @@
 							<pigs>0</pigs>
 							<sheep>0</sheep>
 							<chickens>0</chickens>
-							<cattle_type/>
+							<cattle_type>zebu</cattle_type>
 							<cattle_type_other/>
 						</totals>
 						<management>
-							<grazing_type/>
+							<grazing_type>zero</grazing_type>
 							<grazing_type_other/>							
-							<herding_responsibility/>
+							<herding_responsibility>men</herding_responsibility>
 							<herding_responsibility_other/>
-							<cattle_mixing/>
-							<buffalo_mixing/>
-							<calves_born_this_year/>
-							<calves_and_adults_grazing_together/>
-							<cattle_purpose_rank_1/>
-							<cattle_purpose_rank_2/>
-							<cattle_purpose_rank_3/>
-							<cattle_purpose_rank_4/>
-							<cattle_purpose_rank_5/>
-							<cattle_purpose_rank_6/>
-							<cattle_purpose_rank_7/>
-							<cattle_purpose_rank_8/>																																																	
+							<cattle_mixing>false</cattle_mixing>
+							<buffalo_mixing>false</buffalo_mixing>
+							<calves_born_this_year>0</calves_born_this_year>
+							<calves_and_adults_grazing_together>false</calves_and_adults_grazing_together>
+							<cattle_purpose_rank_1>milk</cattle_purpose_rank_1>
+							<cattle_purpose_rank_2>milk</cattle_purpose_rank_2>
+							<cattle_purpose_rank_3>milk</cattle_purpose_rank_3>
+							<cattle_purpose_rank_4>milk</cattle_purpose_rank_4>
+							<cattle_purpose_rank_5>milk</cattle_purpose_rank_5>
+							<cattle_purpose_rank_6>milk</cattle_purpose_rank_6>
+							<cattle_purpose_rank_7>milk</cattle_purpose_rank_7>
+							<cattle_purpose_rank_8>milk</cattle_purpose_rank_8>																																																
 						</management>							
 					</livestock>
 					<cattle_health_management>	
-						<sick_animal_carer/>	
+						<sick_animal_carer>men</sick_animal_carer>
 						<diseases_affecting_cattle/>
 						<animals_affected_in_year/>
-						<deaths_in_year/>
+						<deaths_in_year>0</deaths_in_year>
 						<treatments_used/>
-						<source_of_advice_recieved/>
+						<source_of_advice_recieved>vet</source_of_advice_recieved>
 						<when_will_seek_assistance/>
 						<when_will_seek_assistance_other/>
 						<source_of_advice_recieved_other/>
 						<where_will_seek_assistance/>						
-						<deaths_aged_zero_to_one_month/>
-						<deaths_aged_one_to_four_months/>
-						<deaths_aged_four_to_twelve_months/>
-						<deaths_aged_more_than_twelve_months/>
+						<deaths_aged_zero_to_one_month>0</deaths_aged_zero_to_one_month>
+						<deaths_aged_one_to_four_months>0</deaths_aged_one_to_four_months>
+						<deaths_aged_four_to_twelve_months>0</deaths_aged_four_to_twelve_months>
+						<deaths_aged_more_than_twelve_months>0</deaths_aged_more_than_twelve_months>
 						<top_rated_desired_improvements/>
 						<top_rated_desired_improvements_other/>						
-						<purpose_of_cattle_with_higher_survival_rate/>
+						<purpose_of_cattle_with_higher_survival_rate>sell_as_calves</purpose_of_cattle_with_higher_survival_rate>
 						<purpose_of_cattle_with_higher_survival_rate_other/>
 						<sell_cattle_to_whom/>
-						<associates_ticks_with_disease_in_cattle/>
+						<associates_ticks_with_disease_in_cattle>true</associates_ticks_with_disease_in_cattle>
 						<disease_associated_with_ticks1/>
 						<disease_associated_with_ticks2/>
 						<disease_associated_with_ticks3/>			
-						<dip_or_spray_is_used/>
+						<dip_or_spray_is_used>false</dip_or_spray_is_used>
 						<dip_spray_products_used/>
 						<dip_spray_products_used_other/>						
-						<dip_spray_frequency/>
+						<dip_spray_frequency>monthly</dip_spray_frequency>
 						<dip_spray_frequency_other/>						
 						<additional_tick_treatment/>
 					</cattle_health_management>
 					<ecf_infection_treatment_vaccination>		
-						<familiar_with_ecf/>	
+						<familiar_with_ecf>true</familiar_with_ecf>
 						<associated_ecf_symptoms/>
 						<associated_ecf_symptoms_other/>
 						<approach_to_ecf_treatment/>
 						<approach_to_ecf_treatment_other/>
-						<aware_ecf_vaccination/>				
-						<cattle_are_vaccinated_against_ecf/>
+						<aware_ecf_vaccination>true</aware_ecf_vaccination>
+						<cattle_are_vaccinated_against_ecf>true</cattle_are_vaccinated_against_ecf>
 						<date_ecf_vaccination1/>
 						<date_ecf_vaccination2/>
-						<no_cattle_vaccinated/>				
+						<no_cattle_vaccinated>0</no_cattle_vaccinated>		
 						<age_cattle_vaccinated/>					
-						<age_of_cattle_vaccinated/>
 						<cattle_showing_signs_since_ecf_vaccination/>
 						<time_from_vaccination_to_signs_of_ecf/>	
 						<age_of_cattle_showing_signs_of_ecf/>
 						<desc_ecf_symptoms/>						
-						<deaths_have_occured_since_ecf_vaccination/>
-						<no_deaths_since_ecf_vaccination/>
+						<deaths_have_occured_since_ecf_vaccination>false</deaths_have_occured_since_ecf_vaccination>
+						<no_deaths_since_ecf_vaccination>0</no_deaths_since_ecf_vaccination>
 						<times_from_ecf_vaccination_to_death/>
 						<ages_of_ecf_deaths_since_vaccination/>
-						<incented_to_ecf_vaccinate/>
+						<incented_to_ecf_vaccinate>when_vaccine_available</incented_to_ecf_vaccinate>
 						<incented_to_ecf_vaccinate_other/>
 						<reasons_to_not_ecf_vaccinate/>
 						<reasons_to_not_ecf_vaccinate_other/>						
 						<rating_of_ecf_vaccination_effect/>
-						<recieved_ecf_vaccination_info/>	
+						<recieved_ecf_vaccination_info>true</recieved_ecf_vaccination_info>
 					</ecf_infection_treatment_vaccination>										
   				</farm>
-				<vetaid_metadata>
-					<schema_version>1</schema_version>					
-				</vetaid_metadata>
 			</xf:instance>
 			
 			<!-- Farm Details add the required="true()" attr for those needed-->
@@ -190,9 +189,9 @@
 			<xf:bind id="timesFromECFVaccinationToDeath" 				nodeset="/farm/ecf_infection_treatment_vaccination/times_from_ecf_vaccination_to_death" 		type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>
 			<xf:bind id="agesOfECFDeathsSinceVaccination" 				nodeset="/farm/ecf_infection_treatment_vaccination/ages_of_ecf_deaths_since_vaccination" 		type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>		
 			<xf:bind id="incentedToECFVaccinate" 						nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate" 					type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>
-			<xf:bind id="incentedToECFVaccinateOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate_other" 			type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>			
+			<xf:bind id="incentedToECFVaccinateOther" 					nodeset="/farm/ecf_infection_treatment_vaccination/incented_to_ecf_vaccinate_other" 			type="string"		relevant="selected(../familiar_with_ecf, 'true') and selected(../incented_to_ecf_vaccinate, 'other')"/>			
 			<xf:bind id="reasonsToNotECFVaccinate" 						nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate" 				type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>
-			<xf:bind id="reasonsToNotECFVaccinateOther" 				nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate_other" 			type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>			
+			<xf:bind id="reasonsToNotECFVaccinateOther" 				nodeset="/farm/ecf_infection_treatment_vaccination/reasons_to_not_ecf_vaccinate_other" 			type="string"		relevant="selected(../familiar_with_ecf, 'true') and selected(../reasons_to_not_ecf_vaccinate, 'other')"/>			
 			<xf:bind id="ratingOfECFVaccinationEffect" 					nodeset="/farm/ecf_infection_treatment_vaccination/rating_of_ecf_vaccination_effect"			type="integer"		relevant="selected(../familiar_with_ecf, 'true')"/>
 			<xf:bind id="recievedECFVaccinationInfo" 					nodeset="/farm/ecf_infection_treatment_vaccination/recieved_ecf_vaccination_info" 				type="string"		relevant="selected(../familiar_with_ecf, 'true')"/>			
 				
@@ -208,16 +207,16 @@
 			</input>
 			
 			<xf:input bind="locationGeoPoint">
-				<xf:label>Location of Farm:</xf:label>
+				<xf:label>Location of farm:</xf:label>
 				<hint>Press to detect position</hint>				
 			</xf:input>
 			
 			<xf:input bind="locationDetails">
-				<label>Location / SubLocation Name</label>
+				<label>Location / sublocation name</label>
 				<hint>If GPS is not working, please give more detailed info</hint>
 			</xf:input>
 			
-	  		<xf:label>Farm Details</xf:label>
+	  		<xf:label>Farm details</xf:label>
 			<xf:select1 bind="enterprise">
 				<label>What is your main enterprise?</label>
 				<xf:item>
@@ -238,13 +237,13 @@
 		  		<xf:label>Livestock totals</xf:label>
 		
 				<xf:input bind="noOfCattle"><xf:label>No of Cattle:</xf:label></xf:input>
-				<xf:input bind="noOfGoats"><xf:label>No of goats:</xf:label></xf:input>
+				<xf:input bind="noOfGoats"><xf:label>No of Goats:</xf:label></xf:input>
 				<xf:input bind="noOfPigs"><xf:label>No of Pigs:</xf:label></xf:input>			
 				<xf:input bind="noOfSheep"><xf:label>No of Sheep:</xf:label></xf:input>			
 				<xf:input bind="noOfChickens"><xf:label>No of Chickens:</xf:label></xf:input>
 				
 				<xf:select bind="cattleType" >
-					<xf:label>What Type of cattle do you have?</xf:label>
+					<xf:label>What type of cattle do you have?</xf:label>
 					<xf:item>
 						<xf:label>Zebu (bos indicus)</xf:label>
 						<xf:value>zebu</xf:value>
@@ -266,7 +265,7 @@
 			</xf:group>			
 
 			<xf:group>
-		  		<xf:label>Livestock Management</xf:label>
+		  		<xf:label>Livestock management</xf:label>
 				<xf:select bind="grazingType">
 					<xf:label>What is the main grazing system for your cattle?</xf:label>
 					<xf:item>
@@ -282,7 +281,7 @@
 						<xf:value>fenced</xf:value>
 					</xf:item>
 					<xf:item>
-						<xf:label>free_range</xf:label>
+						<xf:label>Free_range</xf:label>
 						<xf:value>free_range</xf:value>
 					</xf:item>				
 					<xf:item>
@@ -292,7 +291,7 @@
 				</xf:select>
 
 				<xf:input bind="grazingTypeOther">
-					<xf:label>'Other' types of main Grazing? (comma separated):</xf:label>
+					<xf:label>'Other' types of main grazing? (comma separated):</xf:label>
 				</xf:input>
 
 
@@ -329,14 +328,14 @@
 				</xf:input>
 				
 				<xf:select1 bind="cattleMixing">
-					<xf:label>Do you mix Cattle with Cattle/Buffalo?:</xf:label>
+					<xf:label>Do you mix cattle with cattle/buffalo?:</xf:label>
 					<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>
 					<xf:item><xf:label>No</xf:label><xf:value>false</xf:value>
 					</xf:item>
 				</xf:select1>
 			
 				<xf:select1 bind="buffaloMixing">
-					<xf:label>Do you mix Buffalo with Cattle/Buffalo?:</xf:label>
+					<xf:label>Do you mix buffalo with cattle/buffalo?:</xf:label>
 					<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>					
 					<xf:item><xf:label>No</xf:label><xf:value>false</xf:value>
 					</xf:item>					
@@ -712,7 +711,7 @@
 				</xf:select>
 
 				<xf:input bind="sourceOfAdviceRecievedOther">
-					<xf:label>'Other' Sources of advice? (comma separated):</xf:label>
+					<xf:label>'Other' sources of advice? (comma separated):</xf:label>
 				</xf:input>
 				
 				<xf:select bind="whenWillSeekAssistance">
@@ -756,7 +755,7 @@
 				</xf:input>
 				
 				<xf:group>
-		  			<xf:label>Please enter number of Cattle deaths this year:</xf:label>
+		  			<xf:label>Please enter number of cattle deaths this year:</xf:label>
 					<xf:input bind="numberOfDeathsInYear">
 						<xf:label>No of animal deaths in past year:</xf:label>
 					</xf:input>			
@@ -865,7 +864,7 @@
 					<xf:label>Do you dip or spray your cattle against ticks:</xf:label>
 					<xf:item>
 						<xf:label>No</xf:label>
-						<xf:value>no</xf:value>
+						<xf:value>false</xf:value>
 					</xf:item>
 					<xf:item>
 						<xf:label>Dip</xf:label>

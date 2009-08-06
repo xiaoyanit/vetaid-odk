@@ -1,14 +1,16 @@
-<h:html xmlns="http://www.w3.org/2002/xforms"
-        xmlns:h="http://www.w3.org/1999/xhtml"
-        xmlns:ev="http://www.w3.org/2001/xml-events"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:jr="http://openrosa.org/javarosa">
-  <h:head>
-    <h:title>Interview details</h:title>
+<xf:html xmlns:xf="http://www.w3.org/2002/xforms"
+	xmlns:ev="http://www.w3.org/2001/xml-events"
+	xmlns:jr="http://openrosa.org/javarosa">
+	
+  <head>
+    <title>Interview details</title>
 
-	<model>
-		<instance>
+	<xf:model id="interview">
+		<xf:instance id="mainInstance">
 			<interview>
+				<vetaid_metadata>
+					<schema_version>1</schema_version>					
+				</vetaid_metadata>
 				<interviewer/>
 				<date/>
 				<farm_id/>
@@ -16,69 +18,90 @@
 				<location/>
 				<geopoint/>
 				<household_head/>
-				<household_head_gender/>
+				<household_head_gender>male</household_head_gender>
 				<edu_lvl/>
 				<respondent/>				
-				<respondent_gender/>
+				<respondent_gender>male</respondent_gender>
 				<respondent_relationship_to_household_head/>				
 			</interview>
-			<vetaid_metadata>
-				<schema_version>1</schema_version>					
-			</vetaid_metadata>
-		</instance>
+		</xf:instance>
 	 
-		<bind nodeset="/interview/interviewer" 											type="string"/>
-		<bind nodeset="/interview/farm_id" 												type="string"/>
-		<bind nodeset="/interview/date" 												type="date" jr:preload="date" jr:preloadParams="today"/>
-		<bind nodeset="/interview/village" 												type="string"/>
-		<bind nodeset="/interview/location" 											type="string"/>		
-		<bind nodeset="/interview/geopoint" 											type="geopoint"/>
-		<bind nodeset="/interview/household_head" 										type="string"/>
-		<bind nodeset="/interview/household_head_gender" 								type="string"/>				
-   		<bind nodeset="/interview/edu_lvl" 												type="string"/>
-   		<bind nodeset="/interview/respondent" 											type="string"/>
-   		<bind nodeset="/interview/respondent_gender" 									type="string"/>
-   		<bind nodeset="/interview/respondent_relationship_to_household_head" 			type="string"/>
+		<xf:bind id="farmId" 											nodeset="/interview/farm_id" 												type="string"/>
+		<xf:bind id="interviewer"										nodeset="/interview/interviewer" 											type="string"/>
+   		<xf:bind id="respondent"										nodeset="/interview/respondent" 											type="string"/>
+   		<xf:bind id="respondentGender" 									nodeset="/interview/respondent_gender" 										type="string"/>
+   		<xf:bind id="respondentRelationshipToHouseholdHead" 			nodeset="/interview/respondent_relationship_to_household_head" 				type="string"/>
+		<xf:bind id="date"												nodeset="/interview/date" 													type="date" jr:preload="date" jr:preloadParams="today"/>
+		<xf:bind id="village" 											nodeset="/interview/village" 												type="string"/>
+		<xf:bind id="location" 											nodeset="/interview/location" 												type="string"/>		
+		<xf:bind id="geopoint" 											nodeset="/interview/geopoint" 												type="geopoint"/>
+		<xf:bind id="householdHead" 									nodeset="/interview/household_head" 										type="string"/>
+		<xf:bind id="householdHeadGender" 								nodeset="/interview/household_head_gender" 									type="string"/>				
+   		<xf:bind id="eduLvl" 											nodeset="/interview/edu_lvl" 												type="string"/>				
+    </xf:model>
+  </head>
+  <body>
+		<xf:input bind="farmId">
+			<xf:label>Farm ID</xf:label>
+			<xf:hint>This is a unique ID for each farm in survey</xf:hint>
+		</xf:input>
+		<xf:input bind="interviewer">
+			<xf:label>Name of interviewer</xf:label>
+		</xf:input>
+		<xf:input bind="respondent">
+			<xf:label>Name of respondent</xf:label>
+		</xf:input>
 				
-    </model>
-  </h:head>
-  <h:body>
-		<input ref="farm_id">
-			<label>Farm ID</label>
-			<hint>This is a unique ID for each farm in survey</hint>
-		</input>
-		<input ref="interviewer">
-			<label>Name of interviewer</label>
-		</input>
-		<input ref="respondent">
-			<label>Name of respondent</label>
-		</input>		
-		<input ref="respondent_gender">
-			<label>Gender of respondent</label>
-		</input>
-		<input ref="respondent_relationship_to_household_head">
-			<label>Relationship of respondent to household head</label>
-		</input>		
-		<input ref="date">
-			<label>Date of interview</label>
-		</input>
-		<input ref="village">
-			<label>Village Name</label>
-		</input>
-		<input ref="location">
-			<label>Location / SubLocation Name</label>
-		</input>
-		<input ref="geopoint">
-			<label>Please establish the current GPS co-ords</label>
-		</input>
-		<input ref="household_head">
-			<label>Name of head of Household</label>
-		</input>
-		<input ref="household_head_gender">
-			<label>Gender of head of Household</label>
-		</input>
-		<input ref="edu_lvl">
-			<label>Education level and language proficiency</label>
-		</input>		
-  </h:body>
-</h:html>
+		<xf:select1 bind="respondentGender">
+			<xf:label>Gender of respondent</xf:label>
+			<xf:item>
+				<xf:label>Male</xf:label>
+				<xf:value>male</xf:value>
+			</xf:item>
+			<xf:item>
+				<xf:label>Female</xf:label>
+				<xf:value>female</xf:value>
+			</xf:item>
+		</xf:select1>
+		
+		<xf:input bind="respondentRelationshipToHouseholdHead">
+			<xf:label>Relationship of respondent to household head</xf:label>
+		</xf:input>	
+			
+		<xf:input bind="date">
+			<xf:label>Date of interview</xf:label>
+		</xf:input>
+		
+		<xf:input bind="village">
+			<xf:label>Village Name</xf:label>
+		</xf:input>
+		
+		<xf:input bind="location">
+			<xf:label>Location / SubLocation Name</xf:label>
+		</xf:input>
+		
+		<xf:input bind="geopoint">
+			<xf:label>Please establish the current GPS co-ords</xf:label>
+		</xf:input>
+		
+		<xf:input bind="householdHead">
+			<xf:label>Name of head of Household</xf:label>
+		</xf:input>
+		
+		<xf:select1 bind="householdHeadGender">
+			<xf:label>Gender of head of Household</xf:label>
+			<xf:item>
+				<xf:label>Male</xf:label>
+				<xf:value>male</xf:value>
+			</xf:item>
+			<xf:item>
+				<xf:label>Female</xf:label>
+				<xf:value>female</xf:value>
+			</xf:item>
+		</xf:select1>
+		
+		<xf:input bind="eduLvl">
+			<xf:label>Education level and language proficiency</xf:label>
+		</xf:input>		
+	</body>
+</xf:html>

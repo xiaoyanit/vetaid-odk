@@ -6,65 +6,67 @@
     <title>Animal Core Physical</title>
 
 		<!-- XForm Data Model -->
-		<xf:model id="farm">
+		<xf:model id="animal">
 			<xf:instance id="mainInstance">
 				<animal>
+					<vetaid_metadata>
+						<schema_version>1</schema_version>					
+					</vetaid_metadata>
 					<animal_id/>
 					<farm_id/>
-					<sex/>
-					<breed/>
+					<sex>male</sex>
+					<breed>african</breed>
 					<breed_other/>					
-					<age/>
-					<diarrhea/>
-					<diarrhea_character/>					
+					<age>2yr</age>
+					<diarrhoea>none</diarrhoea>
+					<diarrhoea_character/>					
 					<temperature/>
-					<lymphadenopathy/>		
+					<lymphadenopathy>none</lymphadenopathy>		
 					<avg_node_diameter/>
-					<intended_use_of_animal/>									
-					<body_condition/>
-					<ticks_on_animal/>		
-					<lameness/>
-					<parity/>
-					<lung_sounds/>
+					<intended_use_of_animal>both</intended_use_of_animal>
+					<body_condition>0</body_condition>
+					<ticks_on_animal>0</ticks_on_animal>
+					<lameness>0</lameness>
+					<parity>1</parity>
+					<lung_sounds>normal</lung_sounds>
 					<lung_sounds_location/>
-					<respiratory_rate/>
-					<respiratory_noise/>
-					<resp_effort/>
-					<heave_line/>
+					<respiratory_rate>30</respiratory_rate>
+					<respiratory_noise>normal</respiratory_noise>
+					<resp_effort>normal</resp_effort>
+					<heave_line>present</heave_line>
 					<heart_rate/>				
-					<crt/>
+					<crt>less_than_1_sec</crt>
 					<rumen_fill_rate/>
-					<appetite_change/>
-					<mucus_membrane_colour/>
-					<nasal_discharge/>					
+					<appetite_change>normal</appetite_change>
+					<mucus_membrane_colour>white</mucus_membrane_colour>
+					<nasal_discharge>false</nasal_discharge>
 					<nasal_discharge_type/>
-					<nasal_discharge_severity/>
+					<nasal_discharge_severity>mild</nasal_discharge_severity>
 					<nasal_discharge_character/>
-					<ocular_discharge/>
+					<ocular_discharge>false</ocular_discharge>
+					<ocular_discharge_eye/>	
 					<ocular_discharge_type/>
 					<ocular_discharge_character/>					
 					<ocular_discharge_severity/>
-					<cornea/>
-					<mentation/>
-					<skin_tent/>
-					<lacrimation/>
+					<cornea>normal</cornea>
+					<cornea_which/>
+					<mentation>normal</mentation>
+					<skin_tent>normal</skin_tent>
+					<lacrimation>normal</lacrimation>
 					<lacrimation_character/>									
-					<ataxia/>
-					<oedema/>
-					<faeces/>
-					<coat_quality/>
-					<alopecia/>
+					<ataxia>none</ataxia>
+					<oedema>none</oedema>
+					<faeces>well_formed</faeces>
+					<coat_quality>average</coat_quality>
+					<alopecia>none</alopecia>
 					<energy/>
 					<milk_yield/>
-					<jugular_pulse/>
-					<skin_teat_abnormalities/>
+					<jugular_pulse>normal</jugular_pulse>
+					<skin_teat_abnormalities>false</skin_teat_abnormalities>
 					<skin_teat_abnormalities_location/>
 					<relevant_prv_medical_history/>
 					<abnormalities_comment/>
-		  		</animal>
-				<vetaid_metadata>
-					<schema_version>1</schema_version>					
-				</vetaid_metadata>				
+		  		</animal>			
 			</xf:instance>
 			
 			<!-- Animal details -->
@@ -74,8 +76,8 @@
 			<xf:bind id="breed" 										nodeset="/animal/breed" 									type="string"/>
 			<xf:bind id="breedOther" 									nodeset="/animal/breed_other" 								type="string"		relevant="selected(../breed, 'other')"/>		
 			<xf:bind id="age" 											nodeset="/animal/age" 										type="string"/>
-			<xf:bind id="diarrhea" 										nodeset="/animal/diarrhea" 									type="string"/>
-			<xf:bind id="diarrheaCharacter" 							nodeset="/animal/diarrhea_character" 						type="string"/>		
+			<xf:bind id="diarrhoea" 										nodeset="/animal/diarrhoea" 									type="string"/>
+			<xf:bind id="diarrhoeaCharacter" 							nodeset="/animal/diarrhoea_character" 						type="string"/>		
 			<xf:bind id="temperature" 									nodeset="/animal/temperature" 								type="string"/>
 			<xf:bind id="respiratoryRate" 								nodeset="/animal/respiratory_rate" 							type="string"/>	
 			<xf:bind id="lymphadenopathy" 								nodeset="/animal/lymphadenopathy" 							type="string"/>
@@ -100,10 +102,12 @@
 			<xf:bind id="nasalDischargeSeverity" 						nodeset="/animal/nasal_discharge_severity" 					type="string"		relevant="selected(../nasal_discharge, 'true')"/>
 			<xf:bind id="nasalDischargeCharacter" 						nodeset="/animal/nasal_discharge_character" 				type="string"		relevant="selected(../nasal_discharge, 'true')"/>
 			<xf:bind id="ocularDischarge" 								nodeset="/animal/ocular_discharge" 							type="string"/>
+			<xf:bind id="ocularDischargeEye" 							nodeset="/animal/ocular_discharge_eye"		 				type="string"		relevant="selected(../ocular_discharge, 'true')"/>
 			<xf:bind id="ocularDischargeType" 							nodeset="/animal/ocular_discharge_type" 					type="string"		relevant="selected(../ocular_discharge, 'true')"/>
 			<xf:bind id="ocularDischargeCharacter" 						nodeset="/animal/ocular_discharge_character" 				type="string"		relevant="selected(../ocular_discharge, 'true')"/>
 			<xf:bind id="ocularDischargeSeverity" 						nodeset="/animal/ocular_discharge_severity" 				type="string"		relevant="selected(../ocular_discharge, 'true')"/>
 			<xf:bind id="cornea" 										nodeset="/animal/cornea" 									type="string"/>
+			<xf:bind id="corneaWhich" 									nodeset="/animal/cornea_which" 								type="string"		relevant="not(selected(../cornea, 'normal'))"/>
 			<xf:bind id="mentation" 									nodeset="/animal/mentation" 								type="string"/>
 			<xf:bind id="skinTent" 										nodeset="/animal/skin_tent" 								type="string"/>
 			<xf:bind id="lacrimation" 									nodeset="/animal/lacrimation" 								type="string"/>
@@ -130,11 +134,11 @@
 		</input>
 		
 		<xf:input bind="animalId">
-			<xf:label>Animal Identification ID:</xf:label>
+			<xf:label>Animal identification ID:</xf:label>
 		</xf:input>
 	
 		<xf:select1 bind="sex">
-			<xf:label>Animal Sex?</xf:label>
+			<xf:label>Animal sex?</xf:label>
 			<xf:item>
 				<xf:label>Male</xf:label>
 				<xf:value>male</xf:value>
@@ -146,39 +150,39 @@
 		</xf:select1>					
 		
 		<xf:select1 bind="breed">
-			<xf:label>Animal Breed?</xf:label>
+			<xf:label>Animal breed?</xf:label>
 			<xf:item>
-				<xf:label>african</xf:label>
+				<xf:label>African</xf:label>
 				<xf:value>african</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>european</xf:label>
+				<xf:label>European</xf:label>
 				<xf:value>european</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>african cross</xf:label>
+				<xf:label>African cross</xf:label>
 				<xf:value>african_cross</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>european cross</xf:label>
+				<xf:label>European cross</xf:label>
 				<xf:value>european_cross</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>afr x eur</xf:label>
+				<xf:label>Afr x eur</xf:label>
 				<xf:value>afr_x_eur</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>other known breed</xf:label>
+				<xf:label>Other known breed</xf:label>
 				<xf:value>other_known</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>other / known breed:</xf:label>
+				<xf:label>Other / known breed:</xf:label>
 				<xf:value>other</xf:value>
 			</xf:item>
 		</xf:select1>		
 		
 		<xf:input bind="breedOther">
-			<xf:label>Other known / unknown Breed?  (comma separated):</xf:label>
+			<xf:label>Other known / unknown breed?  (comma separated):</xf:label>
 		</xf:input>
 		
 		<xf:select1 bind="age">
@@ -233,28 +237,28 @@
 			</xf:item>															
 		</xf:select1>		
 		
-		<xf:select1 bind="diarrhea">
-			<xf:label>Symptoms of diarrhea?</xf:label>
+		<xf:select1 bind="diarrhoea">
+			<xf:label>Symptoms of diarrhoea?</xf:label>
 			<xf:item>
 				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild</xf:label>
+				<xf:label>Mild</xf:label>
 				<xf:value>mild</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate</xf:label>
+				<xf:label>Moderate</xf:label>
 				<xf:value>moderate</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe</xf:label>
+				<xf:label>Severe</xf:label>
 				<xf:value>severe</xf:value>
 			</xf:item>
 		</xf:select1>		
 
-		<xf:input bind="diarrheaCharacter">
-			<xf:label>Character of diarrhea:</xf:label>
+		<xf:input bind="diarrhoeaCharacter">
+			<xf:label>Character of diarrhoea:</xf:label>
 		</xf:input>
 
 		<xf:input bind="temperature">
@@ -262,13 +266,13 @@
 		</xf:input>
 	
 		<xf:select1 bind="lymphadenopathy">
-			<xf:label>Shown Lymphadenopathy?</xf:label>
+			<xf:label>Shown lymphadenopathy?</xf:label>
 			<xf:item>
 				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>a node</xf:label>
+				<xf:label>1 node</xf:label>
 				<xf:value>one_node</xf:value>
 			</xf:item>
 			<xf:item>
@@ -290,28 +294,28 @@
 		</xf:select1>
 		
 		<xf:input bind="avgNodeDiameter">
-			<xf:label>Average Node Diameter:</xf:label>
+			<xf:label>Average node diameter:</xf:label>
 		</xf:input>
 
 		<xf:select1 bind="intendedUseOfAnimal">
-			<xf:label>Intended use of Animal?</xf:label>
+			<xf:label>Intended use of animal?</xf:label>
 			<xf:item>
-				<xf:label>beef</xf:label>
+				<xf:label>Beef</xf:label>
 				<xf:value>beef</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>dairy</xf:label>
+				<xf:label>Dairy</xf:label>
 				<xf:value>dairy</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>both</xf:label>
+				<xf:label>Both</xf:label>
 				<xf:value>both</xf:value>
 			</xf:item>
 		</xf:select1>
 
 
 		<xf:select1 bind="bodyCondition">
-			<xf:label>Body Condition?</xf:label>
+			<xf:label>Body condition?</xf:label>
 			<xf:item>
 				<xf:label>0</xf:label>
 				<xf:value>0</xf:value>
@@ -359,7 +363,7 @@
 		</xf:select1>
 		
 		<xf:select1 bind="ticksOnAnimal">
-			<xf:label>Ticks on Animal?</xf:label>
+			<xf:label>Ticks on animal?</xf:label>
 			<xf:item>
 				<xf:label>0</xf:label>
 				<xf:value>0</xf:value>
@@ -387,7 +391,7 @@
 		</xf:select1>
 
 		<xf:select1 bind="lameness">
-			<xf:label>Animal suffering Lameness?</xf:label>
+			<xf:label>Animal suffering lameness?</xf:label>
 			<xf:item>
 				<xf:label>0</xf:label>
 				<xf:value>0</xf:value>
@@ -435,7 +439,7 @@
 		</xf:select1>
 
 		<xf:select1 bind="parity">
-			<xf:label>Animal Parity?</xf:label>
+			<xf:label>Animal parity?</xf:label>
 			<xf:item>
 				<xf:label>1</xf:label>
 				<xf:value>1</xf:value>
@@ -480,39 +484,39 @@
 
 
 		<xf:select1 bind="lungSounds">
-			<xf:label>LungSounds?</xf:label>
+			<xf:label>Lung sounds?</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild increase</xf:label>
+				<xf:label>Mild increase</xf:label>
 				<xf:value>mild_increase</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>increase diffuse</xf:label>
+				<xf:label>Increase diffuse</xf:label>
 				<xf:value>increase_diffuse</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>increased focally</xf:label>
+				<xf:label>Increased focally</xf:label>
 				<xf:value>increased_focally</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>crackles</xf:label>
+				<xf:label>Crackles</xf:label>
 				<xf:value>crackles</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>wheezes</xf:label>
+				<xf:label>Wheezes</xf:label>
 				<xf:value>wheezes</xf:value>
 			</xf:item>			
 		</xf:select1>
 
 		<xf:input bind="lungSoundsLocation">
-			<xf:label>Lung Sound Location?:</xf:label>
+			<xf:label>Lung sound location?:</xf:label>
 		</xf:input>
 
 		<xf:select1 bind="respiratoryRate">
-			<xf:label>Severity of nasal discharge (if yes)?:</xf:label>
+			<xf:label>Respiratory rate?:</xf:label>
 			<xf:item>
 				<xf:label>5</xf:label>
 				<xf:value>5</xf:value>
@@ -564,57 +568,57 @@
 		</xf:select1>
 
 		<xf:select1 bind="respiratoryNoise">
-			<xf:label>respiratoryNoise?</xf:label>
+			<xf:label>Respiratory noise?</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>none</xf:label>
+				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>inspiratory</xf:label>
+				<xf:label>Inspiratory</xf:label>
 				<xf:value>inspiratory</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>expiratory</xf:label>
+				<xf:label>	</xf:label>
 				<xf:value>expiratory</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>both</xf:label>
+				<xf:label>Both</xf:label>
 				<xf:value>both</xf:value>
 			</xf:item>	
 		</xf:select1>		
 
 		<xf:select1 bind="respEffort">
-			<xf:label>respiratory Effort?</xf:label>
+			<xf:label>Respiratory effort?</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild increase</xf:label>
+				<xf:label>Mild increase</xf:label>
 				<xf:value>mild_increase</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate increase</xf:label>
+				<xf:label>Moderate increase</xf:label>
 				<xf:value>moderate_increase</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe increase</xf:label>
+				<xf:label>Severe increase</xf:label>
 				<xf:value>severe_increase</xf:value>
 			</xf:item>
 		</xf:select1>
 		
 		<xf:select1 bind="heaveLine">
-			<xf:label>Heave Line?</xf:label>
+			<xf:label>Heave line?</xf:label>
 			<xf:item>
-				<xf:label>present</xf:label>
+				<xf:label>Present</xf:label>
 				<xf:value>present</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>not present</xf:label>
+				<xf:label>Not present</xf:label>
 				<xf:value>not_present</xf:value>
 			</xf:item>
 		</xf:select1>
@@ -672,7 +676,7 @@
 		</xf:select1>	
 
 		<xf:input bind="rumenFillRate">
-			<xf:label>Rumen Fill Rate?:</xf:label>
+			<xf:label>Rumen fill rate?:</xf:label>
 		</xf:input>		
 		
 		<xf:select1 bind="appetiteChange">
@@ -694,7 +698,7 @@
 				<xf:value>minus_25_percent</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
@@ -718,72 +722,72 @@
 		<xf:select1 bind="mucusMembraneColour">
 			<xf:label>Mucus membrane colour?</xf:label>
 			<xf:item>
-				<xf:label>white</xf:label>
+				<xf:label>White</xf:label>
 				<xf:value>white</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>light pink</xf:label>
+				<xf:label>Light pink</xf:label>
 				<xf:value>light_pink</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>pink</xf:label>
+				<xf:label>Pink</xf:label>
 				<xf:value>pink</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>brick red</xf:label>
+				<xf:label>Brick red</xf:label>
 				<xf:value>brick_red</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>petechiae</xf:label>
+				<xf:label>Petechiae</xf:label>
 				<xf:value>petechiae</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>yellow (icteric)</xf:label>
+				<xf:label>Yellow (icteric)</xf:label>
 				<xf:value>yellow</xf:value>
 			</xf:item>									
 		</xf:select1>
 
 		<xf:select1 bind="nasalDischarge">
-			<xf:label>Any Nasal discharge?:</xf:label>
+			<xf:label>Any nasal discharge?:</xf:label>
 			<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>
 			<xf:item><xf:label>No</xf:label><xf:value>false</xf:value></xf:item>
 		</xf:select1>	
 		
 		
 		<xf:select1 bind="nasalDischargeType">
-			<xf:label>Type of nasal discharge (if yes)?</xf:label>
+			<xf:label>Type of nasal discharge?</xf:label>
 			<xf:item>
-				<xf:label>unilateral (left)</xf:label>
+				<xf:label>Unilateral (left)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>unilateral (right)</xf:label>
+				<xf:label>Unilateral (right)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>bilateral</xf:label>
+				<xf:label>Bilateral</xf:label>
 				<xf:value>bilateral</xf:value>
 			</xf:item>							
 		</xf:select1>		
 		
 		<xf:select1 bind="nasalDischargeSeverity">
-			<xf:label>Severity of nasal discharge (if yes)?:</xf:label>
+			<xf:label>Severity of nasal discharge?:</xf:label>
 			<xf:item>
-				<xf:label>mild</xf:label>
+				<xf:label>Mild</xf:label>
 				<xf:value>mild</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate</xf:label>
+				<xf:label>Moderate</xf:label>
 				<xf:value>moderate</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe</xf:label>
+				<xf:label>Severe</xf:label>
 				<xf:value>severe</xf:value>
 			</xf:item>							
 		</xf:select1>		
 		
 		<xf:input bind="nasalDischargeCharacter">
-			<xf:label>Character of discharge (if yes)?:</xf:label>
+			<xf:label>Character of discharge?:</xf:label>
 		</xf:input>
 		
 		<xf:select1 bind="ocularDischarge">
@@ -791,51 +795,58 @@
 			<xf:item><xf:label>Yes</xf:label><xf:value>true</xf:value></xf:item>					
 			<xf:item><xf:label>No</xf:label><xf:value>false</xf:value></xf:item>
 		</xf:select1>
+		
+		<xf:select1 bind="ocularDischargeEye">
+			<xf:label>Which Eye?:</xf:label>
+			<xf:item><xf:label>Both</xf:label><xf:value>both</xf:value></xf:item>					
+			<xf:item><xf:label>Right</xf:label><xf:value>Right</xf:value></xf:item>
+			<xf:item><xf:label>Left</xf:label><xf:value>Left</xf:value></xf:item>
+		</xf:select1>
 
 		<xf:select1 bind="ocularDischargeType">
-			<xf:label>Ocular discharge Type (if yes)?</xf:label>
+			<xf:label>Ocular discharge type?</xf:label>
 			<xf:item>
-				<xf:label>unilateral (left)</xf:label>
+				<xf:label>Unilateral (left)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>unilateral (right)</xf:label>
+				<xf:label>Unilateral (right)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>bilateral</xf:label>
+				<xf:label>Bilateral</xf:label>
 				<xf:value>bilateral</xf:value>
 			</xf:item>							
 		</xf:select1>
 				
 		<xf:select1 bind="ocularDischargeSeverity">
-			<xf:label>Severity of ocular discharge (if yes)?:</xf:label>
+			<xf:label>Severity of ocular discharge?:</xf:label>
 			<xf:item>
-				<xf:label>mild</xf:label>
+				<xf:label>Mild</xf:label>
 				<xf:value>mild</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate</xf:label>
+				<xf:label>Moderate</xf:label>
 				<xf:value>moderate</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe</xf:label>
+				<xf:label>Severe</xf:label>
 				<xf:value>severe</xf:value>
 			</xf:item>							
 		</xf:select1>		
 
 		<xf:input bind="ocularDischargeCharacter">
-			<xf:label>Character of occular discharge (if yes)?:</xf:label>
+			<xf:label>Character of occular discharge?:</xf:label>
 		</xf:input>
 
 		<xf:select1 bind="cornea">
 			<xf:label>Cornea?:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>increased opacity</xf:label>
+				<xf:label>Increased opacity</xf:label>
 				<xf:value>increased_opacity</xf:value>
 			</xf:item>
 			<xf:item>
@@ -843,7 +854,7 @@
 				<xf:value>superficial_damage</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>deep damage</xf:label>
+				<xf:label>Deep damage</xf:label>
 				<xf:value>deep_damage</xf:value>
 			</xf:item>										
 		</xf:select1>				
@@ -851,31 +862,31 @@
 		<xf:select1 bind="mentation">
 			<xf:label>Mentation?:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>dull</xf:label>
+				<xf:label>Dull</xf:label>
 				<xf:value>dull</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>stuperous</xf:label>
+				<xf:label>Stuperous</xf:label>
 				<xf:value>stuperous</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>obtunded</xf:label>
+				<xf:label>Obtunded</xf:label>
 				<xf:value>obtunded</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>comatose</xf:label>
+				<xf:label>Comatose</xf:label>
 				<xf:value>comatose</xf:value>
 			</xf:item>												
 		</xf:select1>
 		
 		<xf:select1 bind="skinTent">
-			<xf:label>Skin Tent?:</xf:label>
+			<xf:label>Skin tent?:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
@@ -903,31 +914,31 @@
 		<xf:select1 bind="lacrimation">
 			<xf:label>Lacrimation?:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild reduction</xf:label>
+				<xf:label>Mild reduction</xf:label>
 				<xf:value>mild_reduction</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate reduction</xf:label>
+				<xf:label>Moderate reduction</xf:label>
 				<xf:value>moderate_reduction</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe reduction</xf:label>
+				<xf:label>Severe reduction</xf:label>
 				<xf:value>severe_reduction</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild increase</xf:label>
+				<xf:label>Mild increase</xf:label>
 				<xf:value>mild_increase</xf:value>
 			</xf:item>	
 			<xf:item>
-				<xf:label>moderate increase</xf:label>
+				<xf:label>Moderate increase</xf:label>
 				<xf:value>moderate_increase</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe increase</xf:label>
+				<xf:label>Severe increase</xf:label>
 				<xf:value>severe_increase</xf:value>
 			</xf:item>																
 		</xf:select1>
@@ -937,25 +948,25 @@
 		</xf:input>			
 				
 		<xf:select1 bind="ataxia">
-			<xf:label>ataxia?:</xf:label>
+			<xf:label>Ataxia?:</xf:label>
 			<xf:item>
-				<xf:label>none</xf:label>
+				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>present</xf:label>
+				<xf:label>Present</xf:label>
 				<xf:value>present</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>limbs</xf:label>
+				<xf:label>Limbs</xf:label>
 				<xf:value>limbs</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>vestibular</xf:label>
+				<xf:label>Vestibular</xf:label>
 				<xf:value>vestibular</xf:value>
 			</xf:item>	
 			<xf:item>
-				<xf:label>cerebellar</xf:label>
+				<xf:label>Cerebellar</xf:label>
 				<xf:value>cerebellar</xf:value>
 			</xf:item>															
 		</xf:select1>				
@@ -963,43 +974,43 @@
 		<xf:select1 bind="oedema">
 			<xf:label>oedema?:</xf:label>
 			<xf:item>
-				<xf:label>none</xf:label>
+				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>eyelid</xf:label>
+				<xf:label>Eyelid</xf:label>
 				<xf:value>eyelid</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mandibular</xf:label>
+				<xf:label>Mandibular</xf:label>
 				<xf:value>mandibular</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>ventral</xf:label>
+				<xf:label>Ventral</xf:label>
 				<xf:value>ventral</xf:value>
 			</xf:item>															
 		</xf:select1>		
 
 		<xf:select1 bind="faeces">
-			<xf:label>faeces:</xf:label>
+			<xf:label>Faeces:</xf:label>
 			<xf:item>
-				<xf:label>dry</xf:label>
+				<xf:label>Dry</xf:label>
 				<xf:value>dry</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>well formed</xf:label>
+				<xf:label>Well formed</xf:label>
 				<xf:value>well_formed</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>loose</xf:label>
+				<xf:label>Loose</xf:label>
 				<xf:value>loose</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>diarrhoea</xf:label>
+				<xf:label>Diarrhoea</xf:label>
 				<xf:value>diarrhoea</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>water</xf:label>
+				<xf:label>Water</xf:label>
 				<xf:value>water</xf:value>
 			</xf:item>																			
 		</xf:select1>
@@ -1007,15 +1018,15 @@
 		<xf:select1 bind="coatQuality">
 			<xf:label>Coat quality:</xf:label>
 			<xf:item>
-				<xf:label>good</xf:label>
+				<xf:label>Good</xf:label>
 				<xf:value>good</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>average</xf:label>
+				<xf:label>Average</xf:label>
 				<xf:value>average</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>poor</xf:label>
+				<xf:label>Poor</xf:label>
 				<xf:value>poor</xf:value>
 			</xf:item>																			
 		</xf:select1>		
@@ -1219,37 +1230,37 @@
 		<xf:select1 bind="jugularPulse">
 			<xf:label>Jugular Pulse:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>normal</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>slow</xf:label>
+				<xf:label>Slow</xf:label>
 				<xf:value>slow</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>fast</xf:label>
+				<xf:label>Fast</xf:label>
 				<xf:value>fast</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>distended</xf:label>
+				<xf:label>Distended</xf:label>
 				<xf:value>distended</xf:value>
 			</xf:item>																								
 		</xf:select1>			
 		
 		<xf:select1 bind="skinTeatAbnormalities">
-			<xf:label>Skin/Teat Abnormalities:</xf:label>
+			<xf:label>Skin/Teat abnormalities:</xf:label>
 			<xf:item>
-				<xf:label>normal</xf:label>
+				<xf:label>Normal</xf:label>
 				<xf:value>false</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>abnormal</xf:label>
+				<xf:label>Abnormal</xf:label>
 				<xf:value>true</xf:value>
 			</xf:item>																								
 		</xf:select1>
 		
 		<xf:input bind="skinTeatAbnormalitiesLocation">
-			<xf:label>Location of skin/teat Abnormalities?:</xf:label>
+			<xf:label>Location of skin/teat abnormalities?:</xf:label>
 		</xf:input>
 		
 		<xf:input bind="relevantPrvMedicalHistory">

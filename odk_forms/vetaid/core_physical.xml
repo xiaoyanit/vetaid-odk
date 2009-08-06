@@ -9,31 +9,31 @@
 		<xf:model id="farm">
 			<xf:instance id="mainInstance">
 				<animal>
+					<vetaid_metadata>
+						<schema_version>1</schema_version>					
+					</vetaid_metadata>
 					<animal_id/>
 					<farm_id/>
-					<sex/>
-					<breed/>
+					<sex>male</sex>
+					<breed>african</breed>
 					<breed_other/>					
-					<age/>	
-					<diarrhea/>
-					<diarrhea_character/>					
+					<age>2yr</age>
+					<diarrhoea>none</diarrhoea>
+					<diarrhoea_character/>					
 					<temperature/>
-					<lymphadenopathy/>
+					<lymphadenopathy>none</lymphadenopathy>
 					<lymphadenopathy_comment/>
-					<body_condition/>
-					<ticks_on_animal/>
-					<appetite_change/>
-					<mucus_membrane_colour/>
+					<body_condition>0</body_condition>
+					<ticks_on_animal>0</ticks_on_animal>
+					<appetite_change>normal</appetite_change>
+					<mucus_membrane_colour>white</mucus_membrane_colour>
 					<mucus_membrane_colour_comment/>
-					<nasal_discharge/>					
+					<nasal_discharge>false</nasal_discharge>
 					<nasal_discharge_type/>
-					<nasal_discharge_severity/>
+					<nasal_discharge_severity>mild</nasal_discharge_severity>
 					<nasal_discharge_character/>
-					<respiratory_rate/>
-		  		</animal>
-				<vetaid_metadata>
-					<schema_version>1</schema_version>					
-				</vetaid_metadata>				
+					<respiratory_rate>30</respiratory_rate>
+		  		</animal>			
 			</xf:instance>
 			
 			<!-- Animal details -->
@@ -43,8 +43,8 @@
 			<xf:bind id="breed" 								nodeset="/animal/breed" 								type="string"/>
 			<xf:bind id="breedOther" 							nodeset="/animal/breed_other" 							type="string" 		relevant="selected(../breed, 'other') or selected(../breed, 'other_known')" required="true()"/>		
 			<xf:bind id="age" 									nodeset="/animal/age" 									type="string"/>
-			<xf:bind id="diarrhea" 								nodeset="/animal/diarrhea" 								type="string"/>
-			<xf:bind id="diarrheaCharacter" 					nodeset="/animal/diarrhea_character" 					type="string"/>		
+			<xf:bind id="diarrhoea" 							nodeset="/animal/diarrhoea" 							type="string"/>
+			<xf:bind id="diarrhoeaCharacter" 					nodeset="/animal/diarrhoea_character" 					type="string"		relevant="not(selected(../diarrhoea, 'none'))"/>		
 			<xf:bind id="temperature" 							nodeset="/animal/temperature" 							type="string"/>
 			<xf:bind id="lymphadenopathy" 						nodeset="/animal/lymphadenopathy" 						type="string"/>
 			<xf:bind id="lymphadenopathyComment" 				nodeset="/animal/lymphadenopathy_comment" 				type="string"   	relevant="not(selected(../lymphadenopathy, 'none'))"/>		
@@ -69,11 +69,11 @@
 		</input>
 		
 		<xf:input bind="animalId">
-			<xf:label>Animal Identification ID:</xf:label>
+			<xf:label>Animal identification ID:</xf:label>
 		</xf:input>
 	
 		<xf:select1 bind="sex">
-			<xf:label>Animal Sex?</xf:label>
+			<xf:label>Animal sex?</xf:label>
 			<xf:item>
 				<xf:label>Male</xf:label>
 				<xf:value>male</xf:value>
@@ -85,33 +85,33 @@
 		</xf:select1>					
 		
 		<xf:select1 bind="breed">
-			<xf:label>Animal Breed?</xf:label>
+			<xf:label>Animal breed?</xf:label>
 			<xf:item>
-				<xf:label>african</xf:label>
+				<xf:label>African</xf:label>
 				<xf:value>african</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>european</xf:label>
+				<xf:label>European</xf:label>
 				<xf:value>european</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>african cross</xf:label>
+				<xf:label>African cross</xf:label>
 				<xf:value>african_cross</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>european cross</xf:label>
+				<xf:label>European cross</xf:label>
 				<xf:value>european_cross</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>afr x eur</xf:label>
+				<xf:label>Afr x eur</xf:label>
 				<xf:value>afr_x_eur</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>other known breed</xf:label>
+				<xf:label>Other known breed</xf:label>
 				<xf:value>other_known</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>other / known breed:</xf:label>
+				<xf:label>Other:</xf:label>
 				<xf:value>other</xf:value>
 			</xf:item>
 		</xf:select1>		
@@ -121,7 +121,7 @@
 		</xf:input>
 		
 		<xf:select1 bind="age">
-			<xf:label>Animal Age?</xf:label>
+			<xf:label>Animal age?</xf:label>
 			<xf:item>
 				<xf:label>0-6m</xf:label>
 				<xf:value>0_6m</xf:value>
@@ -172,28 +172,28 @@
 			</xf:item>															
 		</xf:select1>		
 		
-		<xf:select1 bind="diarrhea">
-			<xf:label>Symptoms of diarrhea?</xf:label>
+		<xf:select1 bind="diarrhoea">
+			<xf:label>Symptoms of diarrhoea?</xf:label>
 			<xf:item>
 				<xf:label>None</xf:label>
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>mild</xf:label>
+				<xf:label>Mild</xf:label>
 				<xf:value>mild</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate</xf:label>
+				<xf:label>Moderate</xf:label>
 				<xf:value>moderate</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe</xf:label>
+				<xf:label>Severe</xf:label>
 				<xf:value>severe</xf:value>
 			</xf:item>
 		</xf:select1>		
 
-		<xf:input bind="diarrheaCharacter">
-			<xf:label>Character of diarrhea:</xf:label>
+		<xf:input bind="diarrhoeaCharacter">
+			<xf:label>Character of diarrhoea:</xf:label>
 		</xf:input>
 
 		<xf:input bind="temperature">
@@ -207,7 +207,7 @@
 				<xf:value>none</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>a node</xf:label>
+				<xf:label>One node</xf:label>
 				<xf:value>one_node</xf:value>
 			</xf:item>
 			<xf:item>
@@ -229,7 +229,7 @@
 		</xf:select1>
 		
 		<xf:input bind="lymphadenopathyComment">
-			<xf:label>Lymphadenopathy Comment:</xf:label>
+			<xf:label>Lymphadenopathy comment:</xf:label>
 		</xf:input>
 
 		<xf:select1 bind="bodyCondition">
@@ -281,7 +281,7 @@
 		</xf:select1>
 		
 		<xf:select1 bind="ticksOnAnimal">
-			<xf:label>Ticks on Animal?</xf:label>
+			<xf:label>Ticks on animal?</xf:label>
 			<xf:item>
 				<xf:label>0</xf:label>
 				<xf:value>0</xf:value>
@@ -351,33 +351,33 @@
 		<xf:select1 bind="mucusMembraneColour">
 			<xf:label>Mucus membrane colour?</xf:label>
 			<xf:item>
-				<xf:label>white</xf:label>
+				<xf:label>White</xf:label>
 				<xf:value>white</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>light pink</xf:label>
+				<xf:label>Light pink</xf:label>
 				<xf:value>light_pink</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>pink</xf:label>
+				<xf:label>Pink</xf:label>
 				<xf:value>pink</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>brick red</xf:label>
+				<xf:label>Brick red</xf:label>
 				<xf:value>brick_red</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>petechiae</xf:label>
+				<xf:label>Petechiae</xf:label>
 				<xf:value>petechiae</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>yellow (icteric)</xf:label>
+				<xf:label>Yellow (icteric)</xf:label>
 				<xf:value>yellow</xf:value>
 			</xf:item>									
 		</xf:select1>
 		
 		<xf:input bind="mucusMembraneColourComment">
-			<xf:label>Mucus Membrane Colour  Comment:</xf:label>
+			<xf:label>Mucus Membrane colour comment:</xf:label>
 		</xf:input>
 
 		<xf:select1 bind="nasalDischarge">
@@ -396,15 +396,15 @@
 		<xf:select1 bind="nasalDischargeType">
 			<xf:label>Type of nasal discharge?</xf:label>
 			<xf:item>
-				<xf:label>unilateral (left)</xf:label>
+				<xf:label>Unilateral (left)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>unilateral (right)</xf:label>
+				<xf:label>Unilateral (right)</xf:label>
 				<xf:value>unilateral</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>bilateral</xf:label>
+				<xf:label>Bilateral</xf:label>
 				<xf:value>bilateral</xf:value>
 			</xf:item>							
 		</xf:select1>		
@@ -412,15 +412,15 @@
 		<xf:select1 bind="nasalDischargeSeverity">
 			<xf:label>Severity of nasal discharge?:</xf:label>
 			<xf:item>
-				<xf:label>mild</xf:label>
+				<xf:label>Mild</xf:label>
 				<xf:value>mild</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>moderate</xf:label>
+				<xf:label>Moderate</xf:label>
 				<xf:value>moderate</xf:value>
 			</xf:item>
 			<xf:item>
-				<xf:label>severe</xf:label>
+				<xf:label>Severe</xf:label>
 				<xf:value>severe</xf:value>
 			</xf:item>							
 		</xf:select1>		
@@ -430,7 +430,7 @@
 		</xf:input>
 			
 		<xf:select1 bind="respiratoryRate">
-			<xf:label>Respiratory Rate?:</xf:label>
+			<xf:label>Respiratory rate?:</xf:label>
 			<xf:item>
 				<xf:label>5</xf:label>
 				<xf:value>5</xf:value>
